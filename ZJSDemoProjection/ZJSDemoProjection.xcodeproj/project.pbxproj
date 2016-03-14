@@ -17,6 +17,9 @@
 		C94446DB1C96573C009D9F35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94446D91C96573C009D9F35 /* LaunchScreen.storyboard */; };
 		C94446E61C96573C009D9F35 /* ZJSDemoProjectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446E51C96573C009D9F35 /* ZJSDemoProjectionTests.m */; };
 		C94446F11C96573C009D9F35 /* ZJSDemoProjectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446F01C96573C009D9F35 /* ZJSDemoProjectionUITests.m */; };
+		C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94447041C965C99009D9F35 /* IPIBasicViewController.m */; };
+		C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C94447071C965CBC009D9F35 /* IPIBasicModel.m */; };
+		C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C944470A1C965CED009D9F35 /* IPIBasicView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,12 @@
 		C94446EC1C96573C009D9F35 /* ZJSDemoProjectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJSDemoProjectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94446F01C96573C009D9F35 /* ZJSDemoProjectionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSDemoProjectionUITests.m; sourceTree = "<group>"; };
 		C94446F21C96573C009D9F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C94447031C965C99009D9F35 /* IPIBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIBasicViewController.h; sourceTree = "<group>"; };
+		C94447041C965C99009D9F35 /* IPIBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIBasicViewController.m; sourceTree = "<group>"; };
+		C94447061C965CBC009D9F35 /* IPIBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIBasicModel.h; sourceTree = "<group>"; };
+		C94447071C965CBC009D9F35 /* IPIBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIBasicModel.m; sourceTree = "<group>"; };
+		C94447091C965CED009D9F35 /* IPIBasicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIBasicView.h; sourceTree = "<group>"; };
+		C944470A1C965CED009D9F35 /* IPIBasicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIBasicView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +141,11 @@
 				C94446CE1C96573C009D9F35 /* ViewController.h */,
 				C94446CF1C96573C009D9F35 /* ViewController.m */,
 				C94446D11C96573C009D9F35 /* Main.storyboard */,
+				C94447001C965C25009D9F35 /* Model */,
+				C94446FF1C965C25009D9F35 /* Controller */,
+				C94447021C965C25009D9F35 /* View */,
+				C94446FE1C965C25009D9F35 /* Common */,
+				C94447011C965C25009D9F35 /* Resource */,
 				C94446D71C96573C009D9F35 /* Assets.xcassets */,
 				C94446D91C96573C009D9F35 /* LaunchScreen.storyboard */,
 				C94446DC1C96573C009D9F35 /* Info.plist */,
@@ -165,6 +179,47 @@
 				C94446F21C96573C009D9F35 /* Info.plist */,
 			);
 			path = ZJSDemoProjectionUITests;
+			sourceTree = "<group>";
+		};
+		C94446FE1C965C25009D9F35 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C94446FF1C965C25009D9F35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C94447031C965C99009D9F35 /* IPIBasicViewController.h */,
+				C94447041C965C99009D9F35 /* IPIBasicViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C94447001C965C25009D9F35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C94447061C965CBC009D9F35 /* IPIBasicModel.h */,
+				C94447071C965CBC009D9F35 /* IPIBasicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C94447011C965C25009D9F35 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C94447021C965C25009D9F35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C94447091C965CED009D9F35 /* IPIBasicView.h */,
+				C944470A1C965CED009D9F35 /* IPIBasicView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,7 +406,10 @@
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
+				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
+				C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */,
+				C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
