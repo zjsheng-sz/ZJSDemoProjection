@@ -20,6 +20,8 @@
 		C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94447041C965C99009D9F35 /* IPIBasicViewController.m */; };
 		C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C94447071C965CBC009D9F35 /* IPIBasicModel.m */; };
 		C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C944470A1C965CED009D9F35 /* IPIBasicView.m */; };
+		C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9656D8A1C96C66E0056752F /* navigationbar.png */; };
+		C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		C94447071C965CBC009D9F35 /* IPIBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIBasicModel.m; sourceTree = "<group>"; };
 		C94447091C965CED009D9F35 /* IPIBasicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIBasicView.h; sourceTree = "<group>"; };
 		C944470A1C965CED009D9F35 /* IPIBasicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIBasicView.m; sourceTree = "<group>"; };
+		C9656D8A1C96C66E0056752F /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
+		C9656D8D1C96D6DD0056752F /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +189,7 @@
 		C94446FE1C965C25009D9F35 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C9656D8C1C96D6DD0056752F /* category */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 		C94447011C965C25009D9F35 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C9656D8A1C96C66E0056752F /* navigationbar.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -220,6 +227,15 @@
 				C944470A1C965CED009D9F35 /* IPIBasicView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C9656D8C1C96D6DD0056752F /* category */ = {
+			isa = PBXGroup;
+			children = (
+				C9656D8D1C96D6DD0056752F /* UIColor+HexColor.h */,
+				C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94446DB1C96573C009D9F35 /* LaunchScreen.storyboard in Resources */,
+				C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */,
 				C94446D81C96573C009D9F35 /* Assets.xcassets in Resources */,
 				C94446D31C96573C009D9F35 /* Main.storyboard in Resources */,
 			);
@@ -404,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
+				C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
@@ -552,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ipi.ZJSDemoProjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -564,6 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ipi.ZJSDemoProjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
