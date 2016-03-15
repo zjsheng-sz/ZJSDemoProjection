@@ -22,6 +22,7 @@
 		C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C944470A1C965CED009D9F35 /* IPIBasicView.m */; };
 		C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9656D8A1C96C66E0056752F /* navigationbar.png */; };
 		C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */; };
+		E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E133EE071C9855E8006319A8 /* IPIMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,9 @@
 		C9656D8A1C96C66E0056752F /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
 		C9656D8D1C96D6DD0056752F /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		E133EE061C9855E8006319A8 /* IPIMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMapViewController.h; sourceTree = "<group>"; };
+		E133EE071C9855E8006319A8 /* IPIMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMapViewController.m; sourceTree = "<group>"; };
+		E133EE091C98609F006319A8 /* ConfigMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +147,11 @@
 			children = (
 				C94446CB1C96573C009D9F35 /* AppDelegate.h */,
 				C94446CC1C96573C009D9F35 /* AppDelegate.m */,
+				E133EE091C98609F006319A8 /* ConfigMacro.h */,
 				C94446CE1C96573C009D9F35 /* ViewController.h */,
 				C94446CF1C96573C009D9F35 /* ViewController.m */,
 				C94446D11C96573C009D9F35 /* Main.storyboard */,
 				C94447001C965C25009D9F35 /* Model */,
-				C94446FF1C965C25009D9F35 /* Controller */,
 				C94447021C965C25009D9F35 /* View */,
 				C94446FE1C965C25009D9F35 /* Common */,
 				C94447011C965C25009D9F35 /* Resource */,
@@ -199,13 +203,17 @@
 			children = (
 				C94447031C965C99009D9F35 /* IPIBasicViewController.h */,
 				C94447041C965C99009D9F35 /* IPIBasicViewController.m */,
+				E133EE061C9855E8006319A8 /* IPIMapViewController.h */,
+				E133EE071C9855E8006319A8 /* IPIMapViewController.m */,
 			);
-			path = Controller;
+			name = Controller;
+			path = ../Controller;
 			sourceTree = "<group>";
 		};
 		C94447001C965C25009D9F35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C94446FF1C965C25009D9F35 /* Controller */,
 				C94447061C965CBC009D9F35 /* IPIBasicModel.h */,
 				C94447071C965CBC009D9F35 /* IPIBasicModel.m */,
 			);
@@ -308,6 +316,7 @@
 				TargetAttributes = {
 					C94446C41C96573C009D9F35 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5GYNH53HV7;
 					};
 					C94446E01C96573C009D9F35 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -424,6 +433,7 @@
 				C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
+				E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
 				C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */,
@@ -569,6 +579,7 @@
 			baseConfigurationReference = 1BDCB2E228A793322564ABBA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -582,6 +593,7 @@
 			baseConfigurationReference = 19976B5B3182F627223B24AD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

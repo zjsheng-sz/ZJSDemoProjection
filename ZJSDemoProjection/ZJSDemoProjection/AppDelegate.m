@@ -18,9 +18,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+#pragma mark 状态栏和导航栏
+    //状态栏和导航栏的设置
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+#pragma mark 百度地图
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"在此处输入您的授权Key"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    
     
     return YES;
 }
