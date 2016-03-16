@@ -23,6 +23,9 @@
 		C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9656D8A1C96C66E0056752F /* navigationbar.png */; };
 		C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */; };
 		E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E133EE071C9855E8006319A8 /* IPIMapViewController.m */; };
+		E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF51C99914900BB60D6 /* IPINetWorking.m */; };
+		E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */; };
+		E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,12 @@
 		E133EE061C9855E8006319A8 /* IPIMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMapViewController.h; sourceTree = "<group>"; };
 		E133EE071C9855E8006319A8 /* IPIMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMapViewController.m; sourceTree = "<group>"; };
 		E133EE091C98609F006319A8 /* ConfigMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigMacro.h; sourceTree = "<group>"; };
+		E1854DF41C99914900BB60D6 /* IPINetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPINetWorking.h; sourceTree = "<group>"; };
+		E1854DF51C99914900BB60D6 /* IPINetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPINetWorking.m; sourceTree = "<group>"; };
+		E1854DF71C99B4AF00BB60D6 /* IPIMasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMasonryViewController.h; sourceTree = "<group>"; };
+		E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMasonryViewController.m; sourceTree = "<group>"; };
+		E1854DFA1C99BCC600BB60D6 /* IPIMasonryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMasonryView.h; sourceTree = "<group>"; };
+		E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMasonryView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +160,7 @@
 				C94446CE1C96573C009D9F35 /* ViewController.h */,
 				C94446CF1C96573C009D9F35 /* ViewController.m */,
 				C94446D11C96573C009D9F35 /* Main.storyboard */,
+				C94446FF1C965C25009D9F35 /* Controller */,
 				C94447001C965C25009D9F35 /* Model */,
 				C94447021C965C25009D9F35 /* View */,
 				C94446FE1C965C25009D9F35 /* Common */,
@@ -193,6 +203,7 @@
 		C94446FE1C965C25009D9F35 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E1854DF31C9990F200BB60D6 /* NetWork */,
 				C9656D8C1C96D6DD0056752F /* category */,
 			);
 			path = Common;
@@ -205,15 +216,15 @@
 				C94447041C965C99009D9F35 /* IPIBasicViewController.m */,
 				E133EE061C9855E8006319A8 /* IPIMapViewController.h */,
 				E133EE071C9855E8006319A8 /* IPIMapViewController.m */,
+				E1854DF71C99B4AF00BB60D6 /* IPIMasonryViewController.h */,
+				E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */,
 			);
-			name = Controller;
-			path = ../Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		C94447001C965C25009D9F35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C94446FF1C965C25009D9F35 /* Controller */,
 				C94447061C965CBC009D9F35 /* IPIBasicModel.h */,
 				C94447071C965CBC009D9F35 /* IPIBasicModel.m */,
 			);
@@ -233,6 +244,8 @@
 			children = (
 				C94447091C965CED009D9F35 /* IPIBasicView.h */,
 				C944470A1C965CED009D9F35 /* IPIBasicView.m */,
+				E1854DFA1C99BCC600BB60D6 /* IPIMasonryView.h */,
+				E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +257,15 @@
 				C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */,
 			);
 			path = category;
+			sourceTree = "<group>";
+		};
+		E1854DF31C9990F200BB60D6 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				E1854DF41C99914900BB60D6 /* IPINetWorking.h */,
+				E1854DF51C99914900BB60D6 /* IPINetWorking.m */,
+			);
+			path = NetWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,11 +454,14 @@
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
 				C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
+				E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
+				E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */,
 				E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
 				C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */,
+				E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */,
 				C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

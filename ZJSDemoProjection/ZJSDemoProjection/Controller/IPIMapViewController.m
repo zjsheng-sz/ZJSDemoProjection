@@ -9,6 +9,8 @@
 #import "IPIMapViewController.h"
 #import "AppDelegate.h"
 #import "ConfigMacro.h"
+
+//百度
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
@@ -17,6 +19,9 @@
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
 #import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+
+#import <Masonry/Masonry.h>
+
 
 
 @interface IPIMapViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
@@ -30,6 +35,7 @@
 
 @implementation IPIMapViewController
 
+#pragma mark 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -43,6 +49,25 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [_mapView viewWillAppear];
+    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    _mapView.delegate = nil;  // 不用时，置nil
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark 百度地图
 - (void)addAnnotationOnUserLocation{
 
     //添加一个PointAnnotation
@@ -67,32 +92,17 @@
 - (BMKMapView *)mapView{
 
     if (!_mapView) {
+        
         _mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH , SCREEN_HEIGHT)];
-        _mapView.mapType = BMKMapTypeNone;//设置地图为空白类型
+        _mapView.mapType = BMKMapTypeStandard;//设置地图为空白类型
         [_mapView setTrafficEnabled:NO];//打开实时路况图层
         [_mapView setBaiduHeatMapEnabled:NO];//打开百度城市热力图图层（百度自有数据）
     }
     return _mapView;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
 
-    [_mapView viewWillAppear];
-    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-
-    [super viewWillDisappear:animated];
-    _mapView.delegate = nil;  // 不用时，置nil 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark MapView
+#pragma mark BMKMapViewDelegate
 
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
 

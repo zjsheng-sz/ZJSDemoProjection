@@ -13,6 +13,7 @@
 #import "ConfigMacro.h"
 
 #import "IPIMapViewController.h"
+#import "IPIMasonryViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -28,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //
-    _functionsArray = @[@"百度地图"];
+    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"加密",@"CoreData",@"FMDB",@"图像绘制"];
 
     
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
@@ -82,6 +83,13 @@
             IPIMapViewController *mapViewController = [[IPIMapViewController alloc] init];
             [self.navigationController pushViewController:mapViewController animated:YES];
         
+        }
+            break;
+        case 1:
+        {
+            IPIMasonryViewController *masonryViewController = [[IPIMasonryViewController alloc] init];
+            [self.navigationController pushViewController:masonryViewController animated:YES];
+            
         }
             break;
             
