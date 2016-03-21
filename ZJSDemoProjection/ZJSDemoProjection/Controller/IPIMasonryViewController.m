@@ -29,6 +29,7 @@
 //    [self.view addSubview:self.view1];
     [self.view addSubview:self.view2];
     
+    
 }
 
 - (void)didReceiveMemoryWarning {

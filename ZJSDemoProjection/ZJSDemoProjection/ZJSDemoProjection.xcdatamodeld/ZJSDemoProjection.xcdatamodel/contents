@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="DepartMent" representedClassName="DepartMent" syncable="YES">
+        <attribute name="departMentID" attributeType="String" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="某部门" syncable="YES"/>
+        <attribute name="superDepartmentID" attributeType="String" defaultValueString="0" syncable="YES"/>
+        <relationship name="manager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Staff" syncable="YES"/>
+        <relationship name="staffs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Staff" inverseName="inDepartMent" inverseEntity="Staff" syncable="YES"/>
+    </entity>
+    <entity name="Staff" representedClassName="Staff" syncable="YES">
+        <attribute name="departMentID" attributeType="String" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="某员工" syncable="YES"/>
+        <attribute name="phoneNum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="staffID" attributeType="String" defaultValueString="0" syncable="YES"/>
+        <relationship name="inDepartMent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DepartMent" inverseName="staffs" inverseEntity="DepartMent" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Staff" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="DepartMent" positionX="-54" positionY="-9" width="128" height="120"/>
+    </elements>
 </model>

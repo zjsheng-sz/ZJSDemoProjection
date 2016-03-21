@@ -26,6 +26,12 @@
 		E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF51C99914900BB60D6 /* IPINetWorking.m */; };
 		E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */; };
 		E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */; };
+		E1854E1D1C9B123100BB60D6 /* DepartMent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E161C9B123100BB60D6 /* DepartMent+CoreDataProperties.m */; };
+		E1854E1E1C9B123100BB60D6 /* DepartMent.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E181C9B123100BB60D6 /* DepartMent.m */; };
+		E1854E1F1C9B123100BB60D6 /* Staff+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E1A1C9B123100BB60D6 /* Staff+CoreDataProperties.m */; };
+		E1854E201C9B123100BB60D6 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E1C1C9B123100BB60D6 /* Staff.m */; };
+		E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */; };
+		E1854E2B1CA0463000BB60D6 /* IPIGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,18 @@
 		E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMasonryViewController.m; sourceTree = "<group>"; };
 		E1854DFA1C99BCC600BB60D6 /* IPIMasonryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMasonryView.h; sourceTree = "<group>"; };
 		E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMasonryView.m; sourceTree = "<group>"; };
+		E1854E151C9B123100BB60D6 /* DepartMent+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DepartMent+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E1854E161C9B123100BB60D6 /* DepartMent+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DepartMent+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E1854E171C9B123100BB60D6 /* DepartMent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartMent.h; sourceTree = "<group>"; };
+		E1854E181C9B123100BB60D6 /* DepartMent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartMent.m; sourceTree = "<group>"; };
+		E1854E191C9B123100BB60D6 /* Staff+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Staff+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E1854E1A1C9B123100BB60D6 /* Staff+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Staff+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E1854E1B1C9B123100BB60D6 /* Staff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Staff.h; sourceTree = "<group>"; };
+		E1854E1C1C9B123100BB60D6 /* Staff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Staff.m; sourceTree = "<group>"; };
+		E1854E261CA0409000BB60D6 /* IPIGraphicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIGraphicViewController.h; sourceTree = "<group>"; };
+		E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIGraphicViewController.m; sourceTree = "<group>"; };
+		E1854E291CA0463000BB60D6 /* IPIGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIGraphicView.h; sourceTree = "<group>"; };
+		E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIGraphicView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +236,8 @@
 				E133EE071C9855E8006319A8 /* IPIMapViewController.m */,
 				E1854DF71C99B4AF00BB60D6 /* IPIMasonryViewController.h */,
 				E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */,
+				E1854E261CA0409000BB60D6 /* IPIGraphicViewController.h */,
+				E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +247,14 @@
 			children = (
 				C94447061C965CBC009D9F35 /* IPIBasicModel.h */,
 				C94447071C965CBC009D9F35 /* IPIBasicModel.m */,
+				E1854E151C9B123100BB60D6 /* DepartMent+CoreDataProperties.h */,
+				E1854E161C9B123100BB60D6 /* DepartMent+CoreDataProperties.m */,
+				E1854E171C9B123100BB60D6 /* DepartMent.h */,
+				E1854E181C9B123100BB60D6 /* DepartMent.m */,
+				E1854E191C9B123100BB60D6 /* Staff+CoreDataProperties.h */,
+				E1854E1A1C9B123100BB60D6 /* Staff+CoreDataProperties.m */,
+				E1854E1B1C9B123100BB60D6 /* Staff.h */,
+				E1854E1C1C9B123100BB60D6 /* Staff.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +274,8 @@
 				C944470A1C965CED009D9F35 /* IPIBasicView.m */,
 				E1854DFA1C99BCC600BB60D6 /* IPIMasonryView.h */,
 				E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */,
+				E1854E291CA0463000BB60D6 /* IPIGraphicView.h */,
+				E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,18 +481,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1854E1D1C9B123100BB60D6 /* DepartMent+CoreDataProperties.m in Sources */,
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
+				E1854E2B1CA0463000BB60D6 /* IPIGraphicView.m in Sources */,
 				C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
 				E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
+				E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */,
+				E1854E201C9B123100BB60D6 /* Staff.m in Sources */,
 				E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */,
 				E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
+				E1854E1E1C9B123100BB60D6 /* DepartMent.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
 				C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */,
 				E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */,
 				C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */,
+				E1854E1F1C9B123100BB60D6 /* Staff+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
