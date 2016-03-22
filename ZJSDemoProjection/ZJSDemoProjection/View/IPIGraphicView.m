@@ -20,12 +20,12 @@
 //    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 80, 100, 100)];
 //    [[UIColor blueColor] setFill];
 //    [path fill];
-//    
+
     /*CoreGraphic框架来绘制一个蓝色圆圈*/
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextAddEllipseInRect(context, CGRectMake(100, 70, 100, 100));
-    CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
-    CGContextFillPath(context);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextAddEllipseInRect(context, CGRectMake(100, 70, 100, 100));
+//    CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
+//    CGContextFillPath(context);
     
     
 }

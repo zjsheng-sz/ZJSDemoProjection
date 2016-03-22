@@ -14,9 +14,6 @@
  
  2个框架：UIkit 和 Core Graphic
  
- 
- 
- 
  */
 
 @interface IPIGraphicViewController ()
@@ -43,7 +40,7 @@
             make.edges.equalTo(self.view).width.insets(padding);
             
         }];
-        
+                
     }
     
     return _graphicView;
@@ -57,13 +54,38 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.graphicView];
+//    [self.view addSubview:self.graphicView];
+    
+    CALayer *myLayer = [CALayer layer];
+    
+    myLayer.delegate = self;
+    
+    [myLayer setNeedsDisplay];
+
+    
+    [self.view.layer addSublayer:myLayer];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
+
+
+    UIGraphicsPushContext(ctx);
+    
+    UIBezierPath* p = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0,0,100,100)];
+    
+    [[UIColor blueColor] setFill];
+    
+    [p fill];
+    
+    UIGraphicsPopContext();
 }
 
 

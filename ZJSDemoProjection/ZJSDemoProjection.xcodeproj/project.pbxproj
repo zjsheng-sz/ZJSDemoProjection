@@ -22,6 +22,7 @@
 		C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C944470A1C965CED009D9F35 /* IPIBasicView.m */; };
 		C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9656D8A1C96C66E0056752F /* navigationbar.png */; };
 		C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */; };
+		C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */; };
 		E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E133EE071C9855E8006319A8 /* IPIMapViewController.m */; };
 		E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF51C99914900BB60D6 /* IPINetWorking.m */; };
 		E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */; };
@@ -81,6 +82,8 @@
 		C9656D8A1C96C66E0056752F /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
 		C9656D8D1C96D6DD0056752F /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIWebViewController.h; sourceTree = "<group>"; };
+		C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIWebViewController.m; sourceTree = "<group>"; };
 		E133EE061C9855E8006319A8 /* IPIMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMapViewController.h; sourceTree = "<group>"; };
 		E133EE071C9855E8006319A8 /* IPIMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMapViewController.m; sourceTree = "<group>"; };
 		E133EE091C98609F006319A8 /* ConfigMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigMacro.h; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */,
 				E1854E261CA0409000BB60D6 /* IPIGraphicViewController.h */,
 				E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */,
+				C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */,
+				C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 			files = (
 				E1854E1D1C9B123100BB60D6 /* DepartMent+CoreDataProperties.m in Sources */,
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
+				C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */,
 				E1854E2B1CA0463000BB60D6 /* IPIGraphicView.m in Sources */,
 				C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,

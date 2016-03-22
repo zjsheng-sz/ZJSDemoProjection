@@ -15,6 +15,7 @@
 #import "IPIMapViewController.h"
 #import "IPIMasonryViewController.h"
 #import "IPIGraphicViewController.h"
+#import "IPIWebViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //
-    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制"];
+    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView"];
 
     
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
@@ -101,6 +102,15 @@
             
         }
             break;
+            
+        case 7:
+        {
+             IPIWebViewController *webViewController = [[IPIWebViewController alloc] init];
+            [self.navigationController pushViewController:webViewController animated:YES];
+            
+        }
+            break;
+            
             
         default:
             break;
