@@ -33,6 +33,7 @@
 		E1854E201C9B123100BB60D6 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E1C1C9B123100BB60D6 /* Staff.m */; };
 		E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */; };
 		E1854E2B1CA0463000BB60D6 /* IPIGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */; };
+		E1854E2E1CA196CE00BB60D6 /* IPILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E2D1CA196CE00BB60D6 /* IPILayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIGraphicViewController.m; sourceTree = "<group>"; };
 		E1854E291CA0463000BB60D6 /* IPIGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIGraphicView.h; sourceTree = "<group>"; };
 		E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIGraphicView.m; sourceTree = "<group>"; };
+		E1854E2C1CA196CE00BB60D6 /* IPILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPILayer.h; sourceTree = "<group>"; };
+		E1854E2D1CA196CE00BB60D6 /* IPILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPILayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,8 +282,7 @@
 				C944470A1C965CED009D9F35 /* IPIBasicView.m */,
 				E1854DFA1C99BCC600BB60D6 /* IPIMasonryView.h */,
 				E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */,
-				E1854E291CA0463000BB60D6 /* IPIGraphicView.h */,
-				E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */,
+				E1854E2F1CA19D0F00BB60D6 /* 绘图 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +303,17 @@
 				E1854DF51C99914900BB60D6 /* IPINetWorking.m */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		E1854E2F1CA19D0F00BB60D6 /* 绘图 */ = {
+			isa = PBXGroup;
+			children = (
+				E1854E291CA0463000BB60D6 /* IPIGraphicView.h */,
+				E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */,
+				E1854E2C1CA196CE00BB60D6 /* IPILayer.h */,
+				E1854E2D1CA196CE00BB60D6 /* IPILayer.m */,
+			);
+			name = "绘图";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +515,7 @@
 				E1854E1E1C9B123100BB60D6 /* DepartMent.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
 				C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */,
+				E1854E2E1CA196CE00BB60D6 /* IPILayer.m in Sources */,
 				E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */,
 				C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */,
 				E1854E1F1C9B123100BB60D6 /* Staff+CoreDataProperties.m in Sources */,

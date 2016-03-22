@@ -27,6 +27,16 @@
 //    CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
 //    CGContextFillPath(context);
     
+
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 100), NO, 0);
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)];
+    [[UIColor blueColor] setFill];
+    [path fill];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
     
 }
 
