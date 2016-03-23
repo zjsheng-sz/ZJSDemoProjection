@@ -54,7 +54,6 @@
     
     if (!_myLayer) {
         //
-        
         _myLayer = [IPILayer layer];
         _myLayer.backgroundColor = [UIColor brownColor].CGColor;
         _myLayer.bounds = CGRectMake(0, 0, 200, 150);
@@ -66,7 +65,6 @@
         _myLayer.shadowOpacity = 0.6;
         [_myLayer setNeedsDisplay];
         
-
     }
     
     return _myLayer;
