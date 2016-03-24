@@ -46,7 +46,8 @@
     }];
     
     //according to apple super should be called at end of method
-//    [super updateViewConstraints];
+    //[super updateViewConstraints];
+
 }
 
 - (void)didTapButton:(UIButton *)button {

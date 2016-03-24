@@ -238,9 +238,291 @@
 #endif
     
     
-    [self coreGraphicMethod];
+//    [self coreGraphicMethod];
+//    [self clipMethod];
+//    [self gradientMethod];
+//    [self colorAndPattern];
+    [self CTMMethod];
     
 }
+
+- (void)CTMMethod{
+
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(40,100), NO, 0.0);
+    
+    CGContextRef con = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(con);
+    
+    CGContextMoveToPoint(con, 90 - 80, 100);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 90);
+    
+    CGContextAddLineToPoint(con, 110 - 80, 100);
+    
+    CGContextMoveToPoint(con, 110 - 80, 100);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 90);
+    
+    CGContextAddLineToPoint(con, 90 - 80, 100);
+    
+    CGContextClosePath(con);
+    
+    CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+    
+    CGContextEOClip(con);
+    
+    CGContextMoveToPoint(con, 100 - 80, 100);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 19);
+    
+    CGContextSetLineWidth(con, 20);
+    
+    CGContextReplacePathWithStrokedPath(con);
+    
+    CGContextClip(con);
+    
+    CGFloat locs[3] = { 0.0, 0.5, 1.0 };
+    
+    CGFloat colors[12] = {
+        
+        0.3,0.3,0.3,0.8,
+        
+        0.0,0.0,0.0,1.0,
+        
+        0.3,0.3,0.3,0.8
+        
+    };
+    
+    CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
+    
+    CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
+    
+    CGContextDrawLinearGradient (con, grad, CGPointMake(89 - 80,0), CGPointMake(111 - 80,0), 0);
+    
+    CGColorSpaceRelease(sp);
+    
+    CGGradientRelease(grad);
+    
+    CGContextRestoreGState(con);
+    
+    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
+    
+    CGContextSetFillColorSpace (con, sp2);
+    
+    CGColorSpaceRelease (sp2);
+    
+    CGPatternCallbacks callback = {0, &drawStripes, NULL };
+    
+    CGAffineTransform tr = CGAffineTransformIdentity;
+    
+    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4),tr,4,4,kCGPatternTilingConstantSpacingMinimalDistortion,true, &callback);
+    
+    CGFloat alph = 1.0;
+    
+    CGContextSetFillPattern(con, patt, &alph);
+    
+    CGPatternRelease(patt);
+    
+    CGContextMoveToPoint(con, 80 - 80, 25);
+    
+    CGContextAddLineToPoint(con, 100 - 80, 0);
+    
+    CGContextAddLineToPoint(con, 120 - 80, 25);
+    
+    CGContextFillPath(con);
+    
+    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext(); 
+    
+    con = UIGraphicsGetCurrentContext(); 
+    
+    [im drawAtPoint:CGPointMake(0,0)]; 
+    
+    for (int i=0; i<3; i++) { 
+        
+        CGContextTranslateCTM(con, 20, 100); 
+        
+        CGContextRotateCTM(con, 30 * M_PI/180.0); 
+        
+        CGContextTranslateCTM(con, -20, -100); 
+        
+        [im drawAtPoint:CGPointMake(0,0)]; 
+        
+    }
+}
+
+
+- (void)colorAndPattern{
+
+    // 绘制红色箭头
+    CGContextRef con = UIGraphicsGetCurrentContext();
+    
+//    CGContextSetFillColorWithColor(con, [[UIColor redColor] CGColor]);
+    
+    
+    CGColorSpaceRef sp2 = CGColorSpaceCreatePattern(NULL);
+    CGContextSetFillColorSpace (con, sp2);
+    CGColorSpaceRelease (sp2);
+    CGPatternCallbacks callback = {0, &drawStripes, NULL };
+    CGAffineTransform tr = CGAffineTransformIdentity;
+    CGPatternRef patt = CGPatternCreate(NULL,CGRectMake(0,0,4,4), tr, 4, 4, kCGPatternTilingConstantSpacingMinimalDistortion, true, &callback);
+    CGFloat alph = 1.0;
+    CGContextSetFillPattern(con, patt, &alph);
+    CGPatternRelease(patt);
+
+    
+    
+    CGContextMoveToPoint(con, 80, 50);
+    
+    CGContextAddLineToPoint(con, 120, 0);
+    
+    CGContextAddLineToPoint(con, 160, 50);
+    
+    CGContextFillPath(con);
+
+}
+
+void drawStripes (void *info, CGContextRef con) {
+    
+    // assume 4 x 4 cell
+    
+    CGContextSetFillColorWithColor(con, [[UIColor redColor] CGColor]);
+    
+    CGContextFillRect(con, CGRectMake(0,0,4,4));
+    
+    CGContextSetFillColorWithColor(con, [[UIColor blueColor] CGColor]);
+    
+    CGContextFillRect(con, CGRectMake(0,0,2,4));
+    
+} 
+
+
+
+
+//渐变
+- (void)gradientMethod{
+    
+    CGContextRef con = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(con);
+    
+    // 在上下文裁剪区域挖一个三角形孔
+    
+    CGContextMoveToPoint(con, 90, 100);
+    
+    CGContextAddLineToPoint(con, 100, 90);
+    
+    CGContextAddLineToPoint(con, 110, 100);
+    
+    CGContextClosePath(con);
+    
+    CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+    
+    CGContextEOClip(con);
+    
+    //绘制一个垂线，让它的轮廓形状成为裁剪区域
+    
+    CGContextMoveToPoint(con, 100, 100);
+    
+    CGContextAddLineToPoint(con, 100, 19);
+    
+    CGContextSetLineWidth(con, 20);
+    
+    // 使用路径的描边版本替换图形上下文的路径
+    
+    CGContextReplacePathWithStrokedPath(con);
+    
+    // 对路径的描边版本实施裁剪
+    
+    CGContextClip(con);
+    
+    // 绘制渐变
+    
+    CGFloat locs[3] = { 0.0, 0.5, 1.0 };
+    
+    CGFloat colors[12] = {
+        
+        0.3,0.3,0.3,0.8, // 开始颜色，透明灰
+        
+        0.0,0.0,0.0,1.0, // 中间颜色，黑色
+        
+        0.3,0.3,0.3,0.8 // 末尾颜色，透明灰
+        
+    };
+    
+    CGColorSpaceRef sp = CGColorSpaceCreateDeviceGray();
+        
+    CGGradientRef grad = CGGradientCreateWithColorComponents (sp, colors, locs, 3);
+    
+    CGContextDrawLinearGradient(con, grad, CGPointMake(89,0), CGPointMake(111,0), 0);
+    
+    CGColorSpaceRelease(sp);
+    
+    CGGradientRelease(grad);
+    
+    CGContextRestoreGState(con); // 完成裁剪
+    
+    // 绘制红色箭头 
+    
+    CGContextSetFillColorWithColor(con, [[UIColor redColor] CGColor]); 
+    
+    CGContextMoveToPoint(con, 80, 25); 
+    
+    CGContextAddLineToPoint(con, 100, 0); 
+    
+    CGContextAddLineToPoint(con, 120, 25); 
+    
+    CGContextFillPath(con);
+    
+}
+
+//修剪
+- (void)clipMethod{
+
+    CGContextRef con = UIGraphicsGetCurrentContext();
+    
+    // 在上下文裁剪区域中挖一个三角形状的孔
+    
+    CGContextMoveToPoint(con, 90, 100);
+    
+    CGContextAddLineToPoint(con, 100, 90);
+    
+    CGContextAddLineToPoint(con, 110, 100);
+    
+    CGContextClosePath(con);
+    
+    CGContextAddRect(con, CGContextGetClipBoundingBox(con));
+    
+    //使用奇偶规则，裁剪区域为矩形减去三角形区域
+    
+    CGContextEOClip(con);
+    
+    // 绘制垂线
+    
+    CGContextMoveToPoint(con, 100, 150);
+    
+    CGContextAddLineToPoint(con, 100, 19);
+    
+    CGContextSetLineWidth(con, 20);
+    
+    CGContextStrokePath(con);
+    
+    // 画红色箭头
+    
+    CGContextSetFillColorWithColor(con, [[UIColor redColor] CGColor]);
+    
+    CGContextMoveToPoint(con, 80, 25);
+    
+    CGContextAddLineToPoint(con, 100, 0); 
+    
+    CGContextAddLineToPoint(con, 120, 25); 
+    
+    CGContextFillPath(con);
+}
+
 
 //core Graphic 属性
 - (void)coreGraphicMethod{
@@ -330,20 +612,27 @@
         [p fillWithBlendMode:kCGBlendModeClear alpha:1.0];
 #endif
         
-#if 1
         
-        
-        CGContextRef ctx = UIGraphicsGetCurrentContext();
-        
-        CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-        
-        CGContextSetLineWidth(ctx, 3);
-        
-        UIBezierPath *path;
-        
-        path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(100, 100, 100, 100) byRoundingCorners:(UIRectCornerTopLeft |UIRectCornerTopRight) cornerRadii:CGSizeMake(10, 10)];
-        
+#if 0
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+        CGContextSetLineWidth(context, 3);
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(100, 100, 100, 100) byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(10, 10)];
         [path stroke];
+        
+#endif
+        
+        
+#if 1
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+        CGContextSetLineWidth(context, 3);
+
+        
+//        CGContextMoveToPoint(context, 100, 100);
+        CGContextAddRect(context, CGRectMake(100, 100, 100, 100));
+        CGContextStrokePath(context);
+        
         
 #endif
         
