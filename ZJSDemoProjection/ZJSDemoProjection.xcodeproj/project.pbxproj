@@ -22,6 +22,10 @@
 		C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C944470A1C965CED009D9F35 /* IPIBasicView.m */; };
 		C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9656D8A1C96C66E0056752F /* navigationbar.png */; };
 		C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */; };
+		C986A0841CA3906F00432BD6 /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = C986A0831CA3906F00432BD6 /* 头像.png */; };
+		C986A0871CA3937200432BD6 /* IPIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C986A0861CA3937200432BD6 /* IPIUtil.m */; };
+		C9B0AAFA1CA3C686002A6D3F /* 头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */; };
+		C9B0AAFD1CA3E939002A6D3F /* IPIMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */; };
 		C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */; };
 		E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E133EE071C9855E8006319A8 /* IPIMapViewController.m */; };
 		E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF51C99914900BB60D6 /* IPINetWorking.m */; };
@@ -83,6 +87,12 @@
 		C9656D8A1C96C66E0056752F /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
 		C9656D8D1C96D6DD0056752F /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		C986A0831CA3906F00432BD6 /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
+		C986A0851CA3937200432BD6 /* IPIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIUtil.h; sourceTree = "<group>"; };
+		C986A0861CA3937200432BD6 /* IPIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIUtil.m; sourceTree = "<group>"; };
+		C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像@2x.png"; sourceTree = "<group>"; };
+		C9B0AAFB1CA3E939002A6D3F /* IPIMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMessageViewController.h; sourceTree = "<group>"; };
+		C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMessageViewController.m; sourceTree = "<group>"; };
 		C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIWebViewController.h; sourceTree = "<group>"; };
 		C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIWebViewController.m; sourceTree = "<group>"; };
 		E133EE061C9855E8006319A8 /* IPIMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMapViewController.h; sourceTree = "<group>"; };
@@ -229,6 +239,8 @@
 			children = (
 				E1854DF31C9990F200BB60D6 /* NetWork */,
 				C9656D8C1C96D6DD0056752F /* category */,
+				C986A0851CA3937200432BD6 /* IPIUtil.h */,
+				C986A0861CA3937200432BD6 /* IPIUtil.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +258,8 @@
 				E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */,
 				C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */,
 				C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */,
+				C9B0AAFB1CA3E939002A6D3F /* IPIMessageViewController.h */,
+				C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				C9656D8A1C96C66E0056752F /* navigationbar.png */,
+				C986A0831CA3906F00432BD6 /* 头像.png */,
+				C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -423,6 +439,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C986A0841CA3906F00432BD6 /* 头像.png in Resources */,
+				C9B0AAFA1CA3C686002A6D3F /* 头像@2x.png in Resources */,
 				C94446DB1C96573C009D9F35 /* LaunchScreen.storyboard in Resources */,
 				C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */,
 				C94446D81C96573C009D9F35 /* Assets.xcassets in Resources */,
@@ -502,6 +520,7 @@
 				E1854E1D1C9B123100BB60D6 /* DepartMent+CoreDataProperties.m in Sources */,
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
 				C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */,
+				C9B0AAFD1CA3E939002A6D3F /* IPIMessageViewController.m in Sources */,
 				E1854E2B1CA0463000BB60D6 /* IPIGraphicView.m in Sources */,
 				C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */,
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
@@ -509,6 +528,7 @@
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
 				E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */,
 				E1854E201C9B123100BB60D6 /* Staff.m in Sources */,
+				C986A0871CA3937200432BD6 /* IPIUtil.m in Sources */,
 				E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */,
 				E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
@@ -661,11 +681,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ipi.ZJSDemoProjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -675,11 +697,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ipi.ZJSDemoProjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

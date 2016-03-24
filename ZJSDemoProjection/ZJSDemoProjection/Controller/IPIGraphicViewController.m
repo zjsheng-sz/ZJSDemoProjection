@@ -11,6 +11,7 @@
 #import "IPIGraphicView.h"
 #import "IPILayer.h"
 
+
 /*
  
  2个框架：UIkit 和 Core Graphic
@@ -34,8 +35,8 @@
     if (!_graphicView) {
         
         _graphicView = [[IPIGraphicView alloc] init];
-        _graphicView.backgroundColor = [UIColor redColor];
-        UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
+        _graphicView.backgroundColor = [UIColor grayColor];
+        UIEdgeInsets padding = UIEdgeInsetsMake(100, 10, 10, 10);
         [self.view addSubview:_graphicView]; //此处不能免掉
         
         [_graphicView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -81,6 +82,7 @@
         _myDelegateLayer.cornerRadius = 10;
         
         _myDelegateLayer.delegate = self;
+        
         [_myDelegateLayer setNeedsDisplay];
 
     }
@@ -98,15 +100,11 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
     [self.view addSubview:self.graphicView];
-    
 //    [self.view.layer addSublayer:self.myLayer];
-    
-    
 //    [self.view.layer addSublayer:_myDelegateLayer];
     
-    
-
     
 }
 
@@ -128,9 +126,6 @@
 }
 
 #pragma mark
-
-
-
 
 
 /*

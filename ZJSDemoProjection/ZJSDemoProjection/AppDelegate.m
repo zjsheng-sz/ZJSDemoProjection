@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ConfigMacro.h"
+#import "UIColor+HexColor.h"
 
 @interface AppDelegate ()
 
@@ -19,10 +21,12 @@
     // Override point for customization after application launch.
     
 #pragma mark 状态栏和导航栏
+    
     //状态栏和导航栏的设置
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbar.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[self imageWithHexColor:@"28b2e7" Rect:CGSizeMake(640, 88)] forBarMetrics:UIBarMetricsDefault];
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
 #pragma mark 百度地图
     // 要使用百度地图，请先启动BaiduMapManager
     _mapManager = [[BMKMapManager alloc]init];
@@ -139,5 +143,29 @@
         }
     }
 }
+
+
+#pragma mark 
+
+- (UIImage *)imageWithHexColor:(NSString *)hexColor Rect:(CGSize)size{
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextAddRect(context, CGRectMake(0, 0, size.width, size.height));
+    
+    CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:hexColor].CGColor);
+    
+    CGContextFillPath(context);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
+}
+
 
 @end

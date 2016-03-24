@@ -16,10 +16,11 @@
 #import "IPIMasonryViewController.h"
 #import "IPIGraphicViewController.h"
 #import "IPIWebViewController.h"
+#import "IPIMessageViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property(nonatomic, strong) UIImageView *statusBarView;//状态栏
+@property(nonatomic, strong) UIView *statusBarView;//状态栏
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *functionsArray;
 
@@ -31,10 +32,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //
-    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView"];
+    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView",@"Mess"];
 
+#pragma mark 状态栏和导航栏
+    //状态栏和导航栏的设置
     
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar addSubview:self.statusBarView];
     
     [self.view addSubview:self.tableView];
@@ -111,6 +114,14 @@
         }
             break;
             
+        case 8:
+        {
+            IPIMessageViewController *messageViewController = [[IPIMessageViewController alloc] init];
+            [self.navigationController pushViewController:messageViewController animated:YES];
+            
+        }
+            break;
+            
             
         default:
             break;
@@ -121,12 +132,10 @@
 - (UIView *)statusBarView{
     
     if (!_statusBarView) {
-        //        _statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, 320, 20)];
-        //        _statusBarView.backgroundColor = [UIColor colorWithHexString:@"28B2E7"];
         
-        _statusBarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -20, SCREEN_WIDTH, 20)];
-        _statusBarView.image = [UIImage imageNamed:IMAGENAME_NAVIGATIONBAR];
-        
+        _statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, 320, 20)];
+        _statusBarView.backgroundColor = [UIColor colorWithHexString:@"28B2E7"];
+
     }
     
     return _statusBarView;
