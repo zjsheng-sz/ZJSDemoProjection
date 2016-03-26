@@ -22,10 +22,13 @@
 		C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C944470A1C965CED009D9F35 /* IPIBasicView.m */; };
 		C9656D8B1C96C66E0056752F /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9656D8A1C96C66E0056752F /* navigationbar.png */; };
 		C9656D8F1C96D6DD0056752F /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */; };
+		C9846D181CA6636C00DEB7E8 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9846D171CA6636C00DEB7E8 /* dog.jpg */; };
+		C9846D1B1CA67EC600DEB7E8 /* IPITextKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */; };
 		C986A0841CA3906F00432BD6 /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = C986A0831CA3906F00432BD6 /* 头像.png */; };
 		C986A0871CA3937200432BD6 /* IPIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C986A0861CA3937200432BD6 /* IPIUtil.m */; };
 		C9B0AAFA1CA3C686002A6D3F /* 头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */; };
 		C9B0AAFD1CA3E939002A6D3F /* IPIMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */; };
+		C9E17E831CA4EAC500ED1195 /* IPIImageHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */; };
 		C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */; };
 		E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E133EE071C9855E8006319A8 /* IPIMapViewController.m */; };
 		E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854DF51C99914900BB60D6 /* IPINetWorking.m */; };
@@ -87,12 +90,17 @@
 		C9656D8A1C96C66E0056752F /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
 		C9656D8D1C96D6DD0056752F /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		C9656D8E1C96D6DD0056752F /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		C9846D171CA6636C00DEB7E8 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		C9846D191CA67EC600DEB7E8 /* IPITextKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPITextKitViewController.h; sourceTree = "<group>"; };
+		C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPITextKitViewController.m; sourceTree = "<group>"; };
 		C986A0831CA3906F00432BD6 /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
 		C986A0851CA3937200432BD6 /* IPIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIUtil.h; sourceTree = "<group>"; };
 		C986A0861CA3937200432BD6 /* IPIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIUtil.m; sourceTree = "<group>"; };
 		C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像@2x.png"; sourceTree = "<group>"; };
 		C9B0AAFB1CA3E939002A6D3F /* IPIMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMessageViewController.h; sourceTree = "<group>"; };
 		C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMessageViewController.m; sourceTree = "<group>"; };
+		C9E17E811CA4EAC500ED1195 /* IPIImageHandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIImageHandleViewController.h; sourceTree = "<group>"; };
+		C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIImageHandleViewController.m; sourceTree = "<group>"; };
 		C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIWebViewController.h; sourceTree = "<group>"; };
 		C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIWebViewController.m; sourceTree = "<group>"; };
 		E133EE061C9855E8006319A8 /* IPIMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMapViewController.h; sourceTree = "<group>"; };
@@ -260,6 +268,10 @@
 				C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */,
 				C9B0AAFB1CA3E939002A6D3F /* IPIMessageViewController.h */,
 				C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */,
+				C9E17E811CA4EAC500ED1195 /* IPIImageHandleViewController.h */,
+				C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */,
+				C9846D191CA67EC600DEB7E8 /* IPITextKitViewController.h */,
+				C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +296,7 @@
 		C94447011C965C25009D9F35 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C9846D171CA6636C00DEB7E8 /* dog.jpg */,
 				C9656D8A1C96C66E0056752F /* navigationbar.png */,
 				C986A0831CA3906F00432BD6 /* 头像.png */,
 				C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */,
@@ -294,11 +307,11 @@
 		C94447021C965C25009D9F35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1854E2F1CA19D0F00BB60D6 /* 绘图 */,
 				C94447091C965CED009D9F35 /* IPIBasicView.h */,
 				C944470A1C965CED009D9F35 /* IPIBasicView.m */,
 				E1854DFA1C99BCC600BB60D6 /* IPIMasonryView.h */,
 				E1854DFB1C99BCC600BB60D6 /* IPIMasonryView.m */,
-				E1854E2F1CA19D0F00BB60D6 /* 绘图 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9846D181CA6636C00DEB7E8 /* dog.jpg in Resources */,
 				C986A0841CA3906F00432BD6 /* 头像.png in Resources */,
 				C9B0AAFA1CA3C686002A6D3F /* 头像@2x.png in Resources */,
 				C94446DB1C96573C009D9F35 /* LaunchScreen.storyboard in Resources */,
@@ -528,10 +542,12 @@
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
 				E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */,
 				E1854E201C9B123100BB60D6 /* Staff.m in Sources */,
+				C9846D1B1CA67EC600DEB7E8 /* IPITextKitViewController.m in Sources */,
 				C986A0871CA3937200432BD6 /* IPIUtil.m in Sources */,
 				E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */,
 				E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
+				C9E17E831CA4EAC500ED1195 /* IPIImageHandleViewController.m in Sources */,
 				E1854E1E1C9B123100BB60D6 /* DepartMent.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
 				C94447081C965CBC009D9F35 /* IPIBasicModel.m in Sources */,

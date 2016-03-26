@@ -36,7 +36,7 @@
         
         _graphicView = [[IPIGraphicView alloc] init];
         _graphicView.backgroundColor = [UIColor grayColor];
-        UIEdgeInsets padding = UIEdgeInsetsMake(100, 10, 10, 10);
+        UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
         [self.view addSubview:_graphicView]; //此处不能免掉
         
         [_graphicView mas_makeConstraints:^(MASConstraintMaker *make) {
