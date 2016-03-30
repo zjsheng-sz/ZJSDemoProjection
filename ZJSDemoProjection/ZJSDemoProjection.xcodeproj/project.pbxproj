@@ -41,6 +41,8 @@
 		E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */; };
 		E1854E2B1CA0463000BB60D6 /* IPIGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */; };
 		E1854E2E1CA196CE00BB60D6 /* IPILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E1854E2D1CA196CE00BB60D6 /* IPILayer.m */; };
+		E19F78401CAC145E00ABE1CB /* IPIReciever.m in Sources */ = {isa = PBXBuildFile; fileRef = E19F783F1CAC145E00ABE1CB /* IPIReciever.m */; };
+		E19F78431CAC149F00ABE1CB /* IPISender.m in Sources */ = {isa = PBXBuildFile; fileRef = E19F78421CAC149F00ABE1CB /* IPISender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,10 @@
 		E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIGraphicView.m; sourceTree = "<group>"; };
 		E1854E2C1CA196CE00BB60D6 /* IPILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPILayer.h; sourceTree = "<group>"; };
 		E1854E2D1CA196CE00BB60D6 /* IPILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPILayer.m; sourceTree = "<group>"; };
+		E19F783E1CAC145E00ABE1CB /* IPIReciever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIReciever.h; sourceTree = "<group>"; };
+		E19F783F1CAC145E00ABE1CB /* IPIReciever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIReciever.m; sourceTree = "<group>"; };
+		E19F78411CAC149F00ABE1CB /* IPISender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPISender.h; sourceTree = "<group>"; };
+		E19F78421CAC149F00ABE1CB /* IPISender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPISender.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,10 @@
 			children = (
 				E1854DF41C99914900BB60D6 /* IPINetWorking.h */,
 				E1854DF51C99914900BB60D6 /* IPINetWorking.m */,
+				E19F783E1CAC145E00ABE1CB /* IPIReciever.h */,
+				E19F783F1CAC145E00ABE1CB /* IPIReciever.m */,
+				E19F78411CAC149F00ABE1CB /* IPISender.h */,
+				E19F78421CAC149F00ABE1CB /* IPISender.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -554,6 +564,8 @@
 				E1854E2E1CA196CE00BB60D6 /* IPILayer.m in Sources */,
 				E1854DF61C99914900BB60D6 /* IPINetWorking.m in Sources */,
 				C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */,
+				E19F78431CAC149F00ABE1CB /* IPISender.m in Sources */,
+				E19F78401CAC145E00ABE1CB /* IPIReciever.m in Sources */,
 				E1854E1F1C9B123100BB60D6 /* Staff+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

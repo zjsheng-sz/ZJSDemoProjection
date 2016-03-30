@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //
-    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView",@"Mess",@"图片压缩",@"Text Kit"];
+    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView",@"Mess",@"图片压缩",@"Text Kit",@"socket封装"];
 
 #pragma mark 状态栏和导航栏
     //状态栏和导航栏的设置
