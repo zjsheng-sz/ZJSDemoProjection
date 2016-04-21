@@ -8,6 +8,7 @@
 
 #import "IPIBasicViewController.h"
 
+
 @interface IPIMasonryViewController : IPIBasicViewController
 
 @end

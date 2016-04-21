@@ -7,6 +7,7 @@
 //
 
 #import "IPIFileViewController.h"
+#import <Masonry.h>
 
 @interface IPIFileViewController ()
 
@@ -19,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     _fileManager = [NSFileManager defaultManager];
  
     //获取路径
@@ -26,8 +29,16 @@
     NSString *directionPath = [documentpath stringByAppendingPathComponent:@"directionPath"];
     NSString *filePath = [directionPath stringByAppendingPathComponent:@"file.txt"];
     
+    //创建文件夹
+    BOOL result = [self createDirWithPath:directionPath];
+    if (result) {
+        NSLog(@"文件夹创建成功");
+    }else{
+        NSLog(@"文件夹创建失败");
+    }
+    
     //创建文件
-    BOOL result = [self createFileWithFilePath:filePath];
+    result = [self createFileWithFilePath:filePath];
     
     if (result) {
         NSLog(@"文件创建成功");
@@ -51,7 +62,130 @@
     NSArray *array = [_fileManager subpathsAtPath:[self dirDoc]];
     NSLog(@"items in document: %@",array);
     
+    //删除文件
+    result = [self deleteFileWithFilePath:filePath];
+    
+    if (result) {
+        NSLog(@"删除成功");
+    }else{
+        NSLog(@"删除失败");
+    }
+    
+    [self configViews];
+    
 }
+
+- (void)configView{
+
+    //3列4行的item,item大小相等,item之间的间隔为10,与边缘的间距为20;
+    
+    CGFloat gap = 10.0;
+    CGFloat margin = 20.0;
+    NSInteger xNum = 3;
+    NSInteger yNum = 4;
+    
+    const CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    const CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    // 105*3+60 = 375;
+    // 199*3+70 = 667
+    CGFloat width = (self.view.bounds.size.width - 2 * margin - (xNum-1)*gap)/3.0;
+    CGFloat height = (self.view.bounds.size.height -64 - 2 * margin - (yNum-1)*gap)/4.0;
+    
+    for (int i = 0; i < yNum; i ++) {//4行
+        for (int j = 0; j < xNum; j ++) {//3列
+            //
+            UIView *view = [[UIView alloc] init];
+            view.backgroundColor = [UIColor redColor];
+            [self.view addSubview:view];
+            
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+               
+                CGFloat left = margin + j * width + j * gap;
+                CGFloat top = margin + i * height + i * gap;
+                
+                make.width.equalTo([NSNumber numberWithFloat:width]);
+                make.height.equalTo([NSNumber numberWithFloat:height]);
+                make.left.equalTo([NSNumber numberWithFloat:left]);
+                make.top.equalTo([NSNumber numberWithFloat:top]);
+                
+            }];
+            
+        }
+    }
+    
+}
+
+
+- (void)configViews{
+    
+    //添加按钮
+    UIButton *addFileButton = [[UIButton alloc] init];
+    [self.view addSubview:addFileButton];
+    addFileButton.backgroundColor = [UIColor redColor];
+    [addFileButton addTarget:self action:@selector(addFileWithPath:) forControlEvents:UIControlEventTouchUpInside];
+    [addFileButton setTitle:@"add" forState:UIControlStateNormal];
+    
+    //读取按钮
+    UIButton *readFileButton = [[UIButton alloc] init];
+    [self.view addSubview:readFileButton];
+    readFileButton.backgroundColor = [UIColor redColor];
+    [readFileButton addTarget:self action:@selector(addFileWithPath:) forControlEvents:UIControlEventTouchUpInside];
+    [readFileButton setTitle:@"read" forState:UIControlStateNormal];
+
+    //删除按钮
+    UIButton *deleteFileButton = [[UIButton alloc] init];
+    [self.view addSubview:deleteFileButton];
+    deleteFileButton.backgroundColor = [UIColor redColor];
+    [deleteFileButton addTarget:self action:@selector(addFileWithPath:) forControlEvents:UIControlEventTouchUpInside];
+    [deleteFileButton setTitle:@"delete" forState:UIControlStateNormal];
+
+    
+    [readFileButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.center.equalTo(self.view);
+        make.width.equalTo(@80);
+        make.height.equalTo(@30);
+        
+    }];
+    
+    [deleteFileButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(readFileButton).offset(100);
+        make.centerX.equalTo(@[readFileButton,addFileButton]);
+        make.size.equalTo(@[readFileButton,addFileButton]);
+        
+    }];
+    
+    [addFileButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(readFileButton).offset(-100);
+
+    }];
+    
+    
+    
+}
+
+- (void)addFileWithPath:(UIButton *)button{
+    NSLog(@"addAction");
+
+}
+
+- (void)addDirectionWithPath:(NSString *)directionPath{
+
+}
+
+- (void)deleteItemWithPath:(NSString *)path{
+
+
+}
+
+- (void)readItemAttributeWithPath:(NSString *)path{
+
+
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -188,12 +322,9 @@
 -(BOOL)deleteFileWithFilePath:(NSString *)filePath{
     
     BOOL res=[_fileManager removeItemAtPath:filePath error:nil];
-    
     if (res) {
-        NSLog(@"文件删除成功");
         return YES;
     }else{
-        NSLog(@"文件删除失败");
         return NO;
     }
     

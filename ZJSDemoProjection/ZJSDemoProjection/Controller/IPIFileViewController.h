@@ -9,5 +9,12 @@
 #import "IPIBasicViewController.h"
 
 @interface IPIFileViewController : IPIBasicViewController
+{
+    int _point;
+}
+
+
+- (int)setPoint:(NSInteger)point;
+- (int)point;
 
 @end
