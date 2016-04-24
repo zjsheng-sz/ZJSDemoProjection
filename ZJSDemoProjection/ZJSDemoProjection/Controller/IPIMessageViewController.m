@@ -50,13 +50,6 @@
         controller.body = bodyOfMessage;
         controller.recipients = recipientslist;
         controller.messageComposeDelegate = self;
-        
-        //        controller.navigationBar.tintColor = [UIColor whiteColor];
-        //        controller.navigationBar.barStyle = UIBarStyleDefault;
-        
-        //        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        //        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-        
         [self presentViewController:controller animated:NO completion:nil];
         controller.view.backgroundColor = [UIColor whiteColor];
     }

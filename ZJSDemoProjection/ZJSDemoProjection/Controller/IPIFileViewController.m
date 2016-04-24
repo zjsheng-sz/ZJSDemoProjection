@@ -6,88 +6,116 @@
 //  Copyright © 2016年 zjs. All rights reserved.
 //
 
+
+
 #import "IPIFileViewController.h"
 #import <Masonry.h>
+#import <Photos/Photos.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+
 
 @interface IPIFileViewController ()
 
 @property(nonatomic, strong)NSFileManager *fileManager;
 
+@property(nonatomic, strong)NSString *homePath;
+@property(nonatomic, strong)NSString *documentPath;
+@property(nonatomic, strong)NSString *libraryPath;
+@property(nonatomic, strong)NSString *tmpPath;
+@property(nonatomic, strong)NSString *cachesPath;
+
+@property(nonatomic, strong)NSMutableArray *alubms;
+@property(nonatomic, strong)UIImage *originImage;
+@property(nonatomic, assign)BOOL usePhotoKit;
+
+
 @end
 
 @implementation IPIFileViewController
+
+#pragma mark - setter and getter
+
+- (NSMutableArray *)alubms{
+    if (!_alubms) {
+        _alubms = [[NSMutableArray alloc] init];
+    }
+    return _alubms;
+}
+
+- (NSString *)homePath{
+    
+    if (!_homePath) {
+        _homePath = NSHomeDirectory();
+    }
+    return _homePath;
+
+}
+
+- (NSString *)documentPath{
+    
+    if (!_documentPath) {
+        _documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        
+    }
+    return _documentPath;
+}
+
+- (NSString *)tmpPath{
+
+    if (!_tmpPath) {
+        _tmpPath = NSTemporaryDirectory();
+    }
+    return _tmpPath;
+}
+
+- (NSString *)cachesPath{
+
+    if (!_cachesPath) {
+        _cachesPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    }
+    return _cachesPath;
+}
+
+- (NSString *)libraryPath{
+
+    if (!_libraryPath) {
+        _libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    }
+    return _libraryPath;
+}
+
+
+#pragma mark - life circle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _fileManager = [NSFileManager defaultManager];
- 
-    //获取路径
-    NSString *documentpath = [self dirDoc];
-    NSString *directionPath = [documentpath stringByAppendingPathComponent:@"directionPath"];
-    NSString *filePath = [directionPath stringByAppendingPathComponent:@"file.txt"];
-    
-    //创建文件夹
-    BOOL result = [self createDirWithPath:directionPath];
-    if (result) {
-        NSLog(@"文件夹创建成功");
-    }else{
-        NSLog(@"文件夹创建失败");
-    }
-    
-    //创建文件
-    result = [self createFileWithFilePath:filePath];
-    
-    if (result) {
-        NSLog(@"文件创建成功");
-    }else{
-        NSLog(@"文件创建失败");
-    }
-    
-    //写入文件
-    NSString *content = @"测试写入内容！";
-    [self writeFileWithFilePath:filePath Content:content];
-    
-    //读取文件
-    NSString *readContent = [self readWithFilePath:filePath];
-    NSLog(@"读取到文件内容:%@",readContent);
-    
-    //文件属性
-    NSDictionary *fileAttributes = [_fileManager attributesOfItemAtPath:filePath error:nil];
-    NSLog(@"fileAttributes = %@",fileAttributes);
-    
-    //document目录下的所有项目
-    NSArray *array = [_fileManager subpathsAtPath:[self dirDoc]];
-    NSLog(@"items in document: %@",array);
-    
-    //删除文件
-    result = [self deleteFileWithFilePath:filePath];
-    
-    if (result) {
-        NSLog(@"删除成功");
-    }else{
-        NSLog(@"删除失败");
-    }
-    
-    [self configViews];
+    [self b];
     
 }
 
-- (void)configView{
 
-    //3列4行的item,item大小相等,item之间的间隔为10,与边缘的间距为20;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+    
+    
+}
+
+#pragma mark - 布局
+
+/**
+ *  3列4行的item,item大小相等,item之间的间隔为10,与边缘的间距为20,为了熟练Masonry自动布局
+ */
+- (void)configView{
     
     CGFloat gap = 10.0;
     CGFloat margin = 20.0;
     NSInteger xNum = 3;
     NSInteger yNum = 4;
     
-    const CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    const CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    // 105*3+60 = 375;
-    // 199*3+70 = 667
     CGFloat width = (self.view.bounds.size.width - 2 * margin - (xNum-1)*gap)/3.0;
     CGFloat height = (self.view.bounds.size.height -64 - 2 * margin - (yNum-1)*gap)/4.0;
     
@@ -115,28 +143,27 @@
     
 }
 
-
+/**
+ *  Masonry 自动布局
+ */
 - (void)configViews{
     
     //添加按钮
     UIButton *addFileButton = [[UIButton alloc] init];
     [self.view addSubview:addFileButton];
     addFileButton.backgroundColor = [UIColor redColor];
-    [addFileButton addTarget:self action:@selector(addFileWithPath:) forControlEvents:UIControlEventTouchUpInside];
     [addFileButton setTitle:@"add" forState:UIControlStateNormal];
     
     //读取按钮
     UIButton *readFileButton = [[UIButton alloc] init];
     [self.view addSubview:readFileButton];
     readFileButton.backgroundColor = [UIColor redColor];
-    [readFileButton addTarget:self action:@selector(addFileWithPath:) forControlEvents:UIControlEventTouchUpInside];
     [readFileButton setTitle:@"read" forState:UIControlStateNormal];
 
     //删除按钮
     UIButton *deleteFileButton = [[UIButton alloc] init];
     [self.view addSubview:deleteFileButton];
     deleteFileButton.backgroundColor = [UIColor redColor];
-    [deleteFileButton addTarget:self action:@selector(addFileWithPath:) forControlEvents:UIControlEventTouchUpInside];
     [deleteFileButton setTitle:@"delete" forState:UIControlStateNormal];
 
     
@@ -162,108 +189,118 @@
 
     }];
     
+}
+
+#pragma mark fileManager 操作
+
+- (void)fileTest{
+
+    _fileManager = [NSFileManager defaultManager];
     
+    //1、创建一个文件夹，并获取它的属性
+    NSString *filePath = [self.documentPath stringByAppendingPathComponent:@"file.txt"];
+    [self createFileWithPath:filePath];
+    [self writeFileWithFilePath:filePath Content:@"测试"];
+    [self getAttributeWithPath:filePath];
     
-}
-
-- (void)addFileWithPath:(UIButton *)button{
-    NSLog(@"addAction");
-
-}
-
-- (void)addDirectionWithPath:(NSString *)directionPath{
-
-}
-
-- (void)deleteItemWithPath:(NSString *)path{
-
-
-}
-
-- (void)readItemAttributeWithPath:(NSString *)path{
-
-
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //2、从项目中获得图片文件, 写入到沙盒, 再从沙盒中取出显示
     
-  
-}
-
-//获取应用沙盒根路径：
-- (NSString *)dirHome{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"jpg"];
+    NSData *imageData = [NSData dataWithContentsOfFile:path];
+    NSString *imageFilePath = [self.documentPath stringByAppendingPathComponent:@"dog.jpg"];
+    [self createFileWithPath:imageFilePath];
+    [imageData writeToFile:imageFilePath atomically:YES];
     
-    NSString *dirHome=NSHomeDirectory();
-    NSLog(@"app_home: %@",dirHome);
-    return dirHome;
-}
-//获取Documents目录
-- (NSString *)dirDoc{
-    //[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"app_home_doc: %@",documentsDirectory);
-    return documentsDirectory;
-}
-//获取Library目录
-- (NSString *)dirLib{
-    //[NSHomeDirectory() stringByAppendingPathComponent:@"Library"];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryDirectory = [paths objectAtIndex:0];
-    NSLog(@"app_home_lib: %@",libraryDirectory);
-    return libraryDirectory;
-}
-//获取Cache目录
-- (NSString *)dirCache{
-    NSArray *cacPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachePath = [cacPath objectAtIndex:0];
-    NSLog(@"app_home_lib_cache: %@",cachePath);
-    return cachePath;
-}
-//获取Tmp目录
--(NSString *)dirTmp{
-    //[NSHomeDirectory() stringByAppendingPathComponent:@"tmp"];
-    NSString *tmpDirectory = NSTemporaryDirectory();
-    NSLog(@"app_home_tmp: %@",tmpDirectory);
-    return tmpDirectory;
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imageFilePath]];
+    [self.view addSubview:imgView];
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view).centerOffset(CGPointMake(0, 0));
+        
+    }];
+    
+    //3、将1中的文件添加文字
+    NSFileHandle *writehandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
+    [writehandle seekToEndOfFile];
+    
+    NSString *appendingString = @"精彩纷呈的世界";
+    for (int i = 0; i < 10 ; i ++) {
+        [writehandle writeData:[appendingString dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [writehandle closeFile];
+    
+    NSString *content = [self readWithFilePath:filePath];
+    NSLog(@"content = %@",content);
+    
 }
 
 //创建文件夹
--(BOOL)createDirWithPath:(NSString *)dirPath{
+- (BOOL)createDirectoryWithPath:(NSString *)directoryPath{
     
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDirectory;
+    BOOL isExistDirPath = [_fileManager fileExistsAtPath:directoryPath isDirectory:&isDirectory];
     
-    // 创建目录
-    BOOL result = [fileManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
-    if (result) {
+    if (isExistDirPath && isDirectory) {//存在文件夹
+        NSLog(@"存在文件夹，不用创建");
+        return NO;
+    }
+    
+    BOOL isCreateDir = [_fileManager createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+    
+    if (isCreateDir) {
         NSLog(@"文件夹创建成功");
         return YES;
+        
     }else{
         NSLog(@"文件夹创建失败");
+        
         return NO;
     }
-}
-
-//创建文件
--(BOOL)createFileWithFilePath:(NSString *)filePath{
     
-    BOOL res=[_fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    if (res) {
-        NSLog(@"文件创建成功: %@" ,filePath);
-        
-        return YES;
-    }else{
-        
-        NSLog(@"文件创建失败");
+}
+//创建文件
+- (BOOL)createFileWithPath:(NSString *)filePath{
+    
+    BOOL isDirectory;
+    BOOL isExistFilePath = [_fileManager fileExistsAtPath:filePath isDirectory:&isDirectory];
+    
+    if (isExistFilePath && !isDirectory) {//存在文件
+        NSLog(@"存在文件，不用创建");
         return NO;
     }
+    
+    BOOL isCreateDir = [_fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    
+    if (isCreateDir) {
+        NSLog(@"文件创建成功");
+        return YES;
+        
+    }else{
+        NSLog(@"文件创建失败");
+        
+        return NO;
+    }
+    
 }
 
-//写入文件
+//删除文件夹
+
+- (BOOL)deleItemWithPath:(NSString *)path{
+
+    if ([_fileManager fileExistsAtPath:path]) {
+        
+        BOOL result = [_fileManager removeItemAtPath:path error:nil];
+        
+        if (result) {
+            return YES;
+        }else{
+            return NO;
+        }
+    }
+    
+    return NO;
+}
+
+//string, array, dictionary, data 直接写入文件
 -(BOOL)writeFileWithFilePath:(NSString *)filePath Content:(NSString *)content{
     
     //字典，数组，字符串一样
@@ -276,61 +313,61 @@
         return NO;
     }
     
-//    //字典
-//    NSString *document = [self dirDoc];
-//    NSString *dicPath = [document stringByAppendingPathComponent:@"text.info"];
-//    NSDictionary *dic = @{@"key1": @"value1",@"key2":@"value2",@"key3":@"value3"};
-//    res = [dic writeToFile:dicPath atomically:YES];
-//    if (res) {
-//        NSLog(@"字典写入成功");
-//    }else{
-//        NSLog(@"字典写入失败");
-//    }
-//    
-//    //数组
-//    NSString *arrPath = [document stringByAppendingString:@"arr.info"];
-//    NSArray *arr = @[@"arr1",@"arr2",@"arr3"];
-//    if ([arr writeToFile:arrPath atomically:YES]) {
-//        NSLog(@"数组写入成功");
-//    }else{
-//        NSLog(@"数组写入失败");
-//    }
 }
 
 //读文件
 -(NSString *)readWithFilePath:(NSString *)filePath {
     
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSLog(@"文件读取成功: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-    //字符串
     NSString *content=[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"content = %@",content);
     return content;
-    
-//    //字典
-//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:filePath];
-//    NSLog(@"dic = %@",dic);
-//    //数组
-//    NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
-//    NSLog(@"arr = %@",arr);
-    
-    
-    
 }
 
-//删除文件
--(BOOL)deleteFileWithFilePath:(NSString *)filePath{
+//获取属性
+- (void)getAttributeWithPath:(NSString *)path{
+
+    NSDictionary * attributeDic = [_fileManager attributesOfItemAtPath:path error:nil];
+    NSLog(@"attributeDic = %@",attributeDic);
+    /*
+     NSFileCreationDate = "2016-03-27 11:57:45 +0000";
+     NSFileExtensionHidden = 0;
+     NSFileGroupOwnerAccountID = 20;
+     NSFileGroupOwnerAccountName = staff;
+     NSFileModificationDate = "2016-04-21 13:40:38 +0000";
+     NSFileOwnerAccountID = 501;
+     NSFilePosixPermissions = 493;
+     NSFileReferenceCount = 7;
+     NSFileSize = 238;
+     NSFileSystemFileNumber = 91905958;
+     NSFileSystemNumber = 16777220;
+     NSFileType = NSFileTypeDirectory;
+     */
     
-    BOOL res=[_fileManager removeItemAtPath:filePath error:nil];
-    if (res) {
-        return YES;
-    }else{
-        return NO;
-    }
-    
+    /*
+    NSFileCreationDate = "2016-04-22 17:12:57 +0000";
+    NSFileExtendedAttributes =     {
+        "com.apple.TextEncoding" = <7574662d 383b3133 34323137 393834>;
+    };
+    NSFileExtensionHidden = 0;
+    NSFileGroupOwnerAccountID = 20;
+    NSFileGroupOwnerAccountName = staff;
+    NSFileModificationDate = "2016-04-22 17:12:57 +0000";
+    NSFileOwnerAccountID = 501;
+    NSFilePosixPermissions = 420;
+    NSFileReferenceCount = 1;
+    NSFileSize = 6;
+    NSFileSystemFileNumber = 92948881;
+    NSFileSystemNumber = 16777220;
+    NSFileType = NSFileTypeRegular;
+    */
 }
 
+#pragma mark - fileHandle 操作
 
+- (void)fileHandle{
+    //见viewdidload
+}
+
+#pragma mark - 获取系统相册
 /*
 #pragma mark - Navigation
 
@@ -338,6 +375,145 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+}
+*/
+
+- (void)photoMethod{
+
+    PHFetchResult *smartAlbumsFetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
+    
+    PHFetchResult *smartAlbumsFetchResult1 = [PHAssetCollection fetchTopLevelUserCollectionsWithOptions:nil];
+    //注意类型
+    for (PHAssetCollection *sub in smartAlbumsFetchResult1)
+    {
+        //遍历到数组中
+        [self.alubms addObject:sub];
+    }
+    
+//    PHFetchResult *group = [PHAsset fetchAssetsInAssetCollection:[self.alubms objectAtIndex:indexPath.row] options:nil];
+}
+
+- (void)a{
+    
+    // 列出所有相册智能相册
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    
+    // 列出所有用户创建的相册
+    PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
+    
+    // 获取所有资源的集合，并按资源的创建时间排序
+    PHFetchOptions *options = [[PHFetchOptions alloc] init];
+    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+    PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
+    
+    NSLog(@"smartAlbums.count = %d, topLevelUserCollections.count = %d, assetsFetchResults.count = %d",(int)smartAlbums.count, (int)topLevelUserCollections.count,(int)assetsFetchResults.count);
+}
+
+- (void)bWithFetchResult:(PHFetchResult *)fetchResult fetchOptions:(PHFetchOptions *)fetchOptions{
+    
+    
+    // 列出所有相册智能相册
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    
+    // 这时 smartAlbums 中保存的应该是各个智能相册对应的 PHAssetCollection
+    for (NSInteger i = 0; i < fetchResult.count; i++) {
+        // 获取一个相册（PHAssetCollection）
+        PHCollection *collection = fetchResult[i];
+        if ([collection isKindOfClass:[PHAssetCollection class]]) {
+            PHAssetCollection *assetCollection = (PHAssetCollection *)collection;
+            // 从每一个智能相册中获取到的 PHFetchResult 中包含的才是真正的资源（PHAsset）
+            PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:assetCollection options:fetchOptions];
+        }else {
+                NSAssert(NO, @"Fetch collection not PHCollection: %@", collection);
+        }
+    }
+        
+        // 获取所有资源的集合，并按资源的创建时间排序
+        PHFetchOptions *options = [[PHFetchOptions alloc] init];
+        options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+        PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
+        // 这时 assetsFetchResults 中包含的，应该就是各个资源（PHAsset）
+        for (NSInteger i = 0; i < fetchResult.count; i++) {
+            // 获取一个资源（PHAsset）
+            PHAsset *asset = fetchResult[i];
+        }
+        
+}
+
+/*
+- (UIImage *)originImage {
+    if (_originImage) {
+        return _originImage;
+    }
+    __block UIImage *resultImage;
+    if (_usePhotoKit) {
+        PHImageRequestOptions *phImageRequestOptions = [[PHImageRequestOptions alloc] init];
+        phImageRequestOptions.synchronous = YES;
+        [[[QMUIAssetsManager sharedInstance] phCachingImageManager] requestImageForAsset:_phAsset
+                                                                              targetSize:PHImageManagerMaximumSize
+                                                                             contentMode:PHImageContentModeDefault
+                                                                                 options:phImageRequestOptions
+                                                                           resultHandler:^(UIImage *result, NSDictionary *info) {
+                                                                               resultImage = result;
+                                                                           }];
+    } else {
+        CGImageRef fullResolutionImageRef = [_alAssetRepresentation fullResolutionImage];
+        // 通过 fullResolutionImage 获取到的的高清图实际上并不带上在照片应用中使用“编辑”处理的效果，需要额外在 AlAssetRepresentation 中获取这些信息
+        NSString *adjustment = [[_alAssetRepresentation metadata] objectForKey:@"AdjustmentXMP"];
+        if (adjustment) {
+            // 如果有在照片应用中使用“编辑”效果，则需要获取这些编辑后的滤镜，手工叠加到原图中
+            NSData *xmpData = [adjustment dataUsingEncoding:NSUTF8StringEncoding];
+            CIImage *tempImage = [CIImage imageWithCGImage:fullResolutionImageRef];
+            
+            NSError *error;
+            NSArray *filterArray = [CIFilter filterArrayFromSerializedXMP:xmpData
+                                                         inputImageExtent:tempImage.extent
+                                                                    error:&error];
+            CIContext *context = [CIContext contextWithOptions:nil];
+            if (filterArray && !error) {
+                for (CIFilter *filter in filterArray) {
+                    [filter setValue:tempImage forKey:kCIInputImageKey];
+                    tempImage = [filter outputImage];
+                }
+                fullResolutionImageRef = [context createCGImage:tempImage fromRect:[tempImage extent]];
+            }
+        }
+        // 生成最终返回的 UIImage，同时把图片的 orientation 也补充上去
+        resultImage = [UIImage imageWithCGImage:fullResolutionImageRef scale:[_alAssetRepresentation scale] orientation:(UIImageOrientation)[_alAssetRepresentation orientation]];
+    }
+    _originImage = resultImage;
+    return resultImage;
+}
+
+- (NSInteger)requestOriginImageWithCompletion:(void (^)(UIImage *, NSDictionary *))completion withProgressHandler:(PHAssetImageProgressHandler)phProgressHandler {
+    if (_usePhotoKit) {
+        if (_originImage) {
+            // 如果已经有缓存的图片则直接拿缓存的图片
+            if (completion) {
+                completion(_originImage, nil);
+            }
+            return 0;
+        } else {
+            PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
+            imageRequestOptions.networkAccessAllowed = YES; // 允许访问网络
+            imageRequestOptions.progressHandler = phProgressHandler;
+            return [[[QMUIAssetsManager sharedInstance] phCachingImageManager] requestImageForAsset:_phAsset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeDefault options:imageRequestOptions resultHandler:^(UIImage *result, NSDictionary *info) {
+                // 排除取消，错误，低清图三种情况，即已经获取到了高清图时，把这张高清图缓存到 _originImage 中
+                BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey] && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue];
+                if (downloadFinined) {
+                    _originImage = result;
+                }
+                if (completion) {
+                    completion(result, info);
+                }
+            }];
+        }
+    } else {
+        if (completion) {
+            completion([self originImage], nil);
+        }
+        return 0;
+    }
 }
 */
 
