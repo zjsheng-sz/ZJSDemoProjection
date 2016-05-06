@@ -13,6 +13,7 @@
 #import <Photos/Photos.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
+const NSInteger READ_LENGTH = 1024; // 1M
 
 @interface IPIFileViewController ()
 
@@ -92,6 +93,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self fileTest];
 }
 
 
@@ -195,39 +197,39 @@
 
     _fileManager = [NSFileManager defaultManager];
     
-    //1、创建一个文件夹，并获取它的属性
-    NSString *filePath = [self.documentPath stringByAppendingPathComponent:@"file.txt"];
-    [self createFileWithPath:filePath];
-    [self writeFileWithFilePath:filePath Content:@"测试"];
-    [self getAttributeWithPath:filePath];
+
     
-    //2、从项目中获得图片文件, 写入到沙盒, 再从沙盒中取出显示
+//    //1、从项目中获得图片文件, 写入到沙盒, 再从沙盒中取出显示
+//    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"jpg"];
+//    NSData *imageData = [NSData dataWithContentsOfFile:path];
+//    NSString *imageFilePath = [self.documentPath stringByAppendingPathComponent:@"dog.jpg"];
+//    [self createFileWithPath:imageFilePath];
+//    [imageData writeToFile:imageFilePath atomically:YES];
+//    
+//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imageFilePath]];
+//    [self.view addSubview:imgView];
+//    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.view).centerOffset(CGPointMake(0, 0));
+//        
+//    }];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"jpg"];
-    NSData *imageData = [NSData dataWithContentsOfFile:path];
-    NSString *imageFilePath = [self.documentPath stringByAppendingPathComponent:@"dog.jpg"];
-    [self createFileWithPath:imageFilePath];
-    [imageData writeToFile:imageFilePath atomically:YES];
     
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imageFilePath]];
-    [self.view addSubview:imgView];
-    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view).centerOffset(CGPointMake(0, 0));
-        
-    }];
+        //1、从项目中获得图片文件, 写入到沙盒, 再从沙盒中取出显示
     
-    //3、将1中的文件添加文字
-    NSFileHandle *writehandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
-    [writehandle seekToEndOfFile];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"dog" ofType:@"jpg"];
+        NSData *imageData = [self fileHandleReadFromFilePath:path];
+        NSString *imageFilePath = [self.documentPath stringByAppendingPathComponent:@"dog.jpg"];
+        [self createFileWithPath:imageFilePath];
+        [imageData writeToFile:imageFilePath atomically:YES];
     
-    NSString *appendingString = @"精彩纷呈的世界";
-    for (int i = 0; i < 10 ; i ++) {
-        [writehandle writeData:[appendingString dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-    [writehandle closeFile];
-    
-    NSString *content = [self readWithFilePath:filePath];
-    NSLog(@"content = %@",content);
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imageFilePath]];
+        [self.view addSubview:imgView];
+        [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view).centerOffset(CGPointMake(0, 0));
+            
+        }];
+
     
 }
 
@@ -361,10 +363,43 @@
 
 #pragma mark - fileHandle 操作
 
-- (void)fileHandle{
-    //见viewdidload
+- (void)fileHandleWriteToFilePath:(NSString *)filePath{
+
+    NSFileHandle *writehandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
+    [writehandle seekToEndOfFile];
     
+    NSString *appendingString = @"精彩纷呈的世界";
+    for (int i = 0; i < 10 ; i ++) {
+        [writehandle writeData:[appendingString dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [writehandle closeFile];
     
+}
+
+
+- (NSData *)fileHandleReadFromFilePath:(NSString *)filePath{
+    
+    NSMutableData *mData = [[NSMutableData alloc] init];
+
+    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:filePath];
+    
+    NSDictionary * fileAttribute = [_fileManager attributesOfItemAtPath:filePath error:nil];
+
+    CGFloat fileSize = [[fileAttribute objectForKey:NSFileSize] floatValue];
+    
+    CGFloat readLength = 0.0;
+    
+    while (readLength < fileSize) {
+        
+        NSData *data = [readHandle readDataOfLength:READ_LENGTH];
+        //send
+
+        [mData appendData:data];
+        
+        readLength += READ_LENGTH;
+    }
+    
+    return mData;
 }
 
 #pragma mark - 获取系统相册
