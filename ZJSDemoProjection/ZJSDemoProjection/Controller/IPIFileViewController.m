@@ -92,8 +92,6 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self b];
-    
 }
 
 
@@ -365,6 +363,8 @@
 
 - (void)fileHandle{
     //见viewdidload
+    
+    
 }
 
 #pragma mark - 获取系统相册

@@ -19,6 +19,7 @@
 #import "IPIMessageViewController.h"
 #import "IPITextKitViewController.h"
 #import "IPIFileViewController.h"
+#import "IPIShareIktViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //
-    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView",@"Mess",@"图片压缩",@"Text Kit",@"socket封装",@"文件"];
+    _functionsArray = @[@"百度地图",@"Masonry",@"AFNetWorking",@"CoreData",@"加密",@"FMDB",@"图像绘制",@"WebView",@"Mess",@"图片压缩",@"Text Kit",@"socket封装",@"文件",@"其它应用打开"];
 
 #pragma mark 状态栏和导航栏
     //状态栏和导航栏的设置
@@ -145,7 +146,12 @@
             [self.navigationController pushViewController:fileViewController animated:YES];
         }
             break;
-        
+        case 13:
+        {
+            IPIShareIktViewController *shareViewController = [[IPIShareIktViewController alloc] init];
+            [self.navigationController pushViewController:shareViewController animated:YES];
+        }
+            break;
             
             
         default:
