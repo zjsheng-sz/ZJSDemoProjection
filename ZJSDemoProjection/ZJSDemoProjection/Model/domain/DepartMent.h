@@ -17,12 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Insert code here to declare functionality of your managed object subclass
 
-- (void)addDepartMent:(DepartMent *)departMent;
-- (void)removeDepartMentByDepartMentID:(NSString *)departMentID;
-- (void)removeAllDepartments;
-- (void)modifyDepartMentByDepartMentID:(NSString *)departMentID newDepartMent:(DepartMent *)newDepartMent;
-- (DepartMent *)fetchDepartMentByDepartMentID:(NSString *)departMentID;
-- (NSArray *)fetchAllDepartMents;
+
 
 
 @end

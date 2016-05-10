@@ -12,8 +12,13 @@
 
 @interface CoreDataSimple : NSObject
 
++(instancetype)shareInstance;
 
-
-
+- (void)addDepartMent:(DepartMent *)departMent;
+- (void)removeDepartMentByDepartMentID:(NSString *)departMentID;
+- (void)removeAllDepartments;
+- (void)modifyDepartMentByDepartMentID:(NSString *)departMentID newDepartMent:(DepartMent *)newDepartMent;
+- (DepartMent *)fetchDepartMentByDepartMentID:(NSString *)departMentID;
+- (NSArray *)fetchAllDepartMents;
 
 @end
