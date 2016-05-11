@@ -12,6 +12,8 @@
 
 @interface AppDelegate ()
 
+@property(nonatomic, strong)NSTimer *myTimer;
+
 @end
 
 @implementation AppDelegate
@@ -36,6 +38,9 @@
         NSLog(@"manager start failed!");
     }
     
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self doSomeThing];
+    });
     
     return YES;
 }
@@ -48,10 +53,35 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    if ([self isMultitaskingSupported] == NO){
+        
+        return;
+    }
+    
+    //开启一个后台任务
+    
+    backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^{
+    }];
+    oldBackgroundTaskIdentifier = backgroundTaskIdentifier;
+    
+    if ([self.myTimer isValid]) {
+        [self.myTimer invalidate];
+    }
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerMethod:) userInfo:nil repeats:YES];
 }
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    if (backgroundTaskIdentifier != UIBackgroundTaskInvalid){
+        [application endBackgroundTask:backgroundTaskIdentifier];
+        if ([self.myTimer isValid]) {
+            [self.myTimer invalidate];
+        }
+    }
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -63,6 +93,48 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
+
+#pragma mark 开启后台任务
+
+UIBackgroundTaskIdentifier backgroundTaskIdentifier;
+UIBackgroundTaskIdentifier oldBackgroundTaskIdentifier;
+
+- (BOOL) isMultitaskingSupported{
+    BOOL result = NO;
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)]){
+        result = [[UIDevice currentDevice] isMultitaskingSupported];
+        
+        }
+
+        return result;
+    
+}
+
+int count;
+
+- (void) timerMethod:(NSTimer *)paramSender{
+    count++;
+    if (count % 500 == 0) {
+        UIApplication *application = [UIApplication sharedApplication];
+
+        //开启一个新的后台
+
+        backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^{
+    
+        }];
+        
+        //结束旧的后台任务
+        [application endBackgroundTask:backgroundTaskIdentifier];
+        oldBackgroundTaskIdentifier = backgroundTaskIdentifier;
+    }
+    
+    NSLog(@"%d",(int)count);
+}
+
+
+
+
 
 #pragma mark - Core Data stack
 
@@ -178,5 +250,18 @@
     
 }
 
+
+#pragma mark 
+
+- (void)doSomeThing{
+
+    long i = 0;
+    
+        while (i < 100000) {
+            i ++;
+            NSLog(@"是否后台运行呢 ？ i = %ld",i);
+            
+        }
+}
 
 @end
