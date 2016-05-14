@@ -69,7 +69,7 @@
     
     _sectionArray = @[@"view",@"基础知识",@"数据&数据处理",@"网络"];
     _functionsArray = @[@[@"百度地图",@"Masonry",@"图像绘制",@"WebView",
-                          @"Mess",@"图片压缩",@"Text Kit",@"其它应用打开"],
+                          @"Mess",@"图片压缩",@"Text Kit",@"其它应用打开",@"collectionView"],
                         @[@"C语言",@"GCD",@"加密"],
                         @[@"FMDB",@"CoreData",@"文件"],
                         @[@"AFNetWorking",@"socket封装"]];

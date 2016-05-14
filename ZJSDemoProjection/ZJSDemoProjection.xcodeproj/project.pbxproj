@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9EA08DCF5B8F98438397D0DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA03DB6F8A93721E4416B4C /* libPods.a */; };
 		C9221F061CE6D04000130977 /* LGJFoldHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */; };
+		C9221F0E1CE6F8E900130977 /* IPICollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */; };
 		C9419F101CDC3517000D59CF /* IPIShareIktViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */; };
 		C94446CA1C96573C009D9F35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446C91C96573C009D9F35 /* main.m */; };
 		C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446CC1C96573C009D9F35 /* AppDelegate.m */; };
@@ -74,6 +75,8 @@
 		BEA03DB6F8A93721E4416B4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9221F041CE6D04000130977 /* LGJFoldHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGJFoldHeaderView.h; sourceTree = "<group>"; };
 		C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGJFoldHeaderView.m; sourceTree = "<group>"; };
+		C9221F0C1CE6F8E900130977 /* IPICollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPICollectionViewController.h; sourceTree = "<group>"; };
+		C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPICollectionViewController.m; sourceTree = "<group>"; };
 		C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIShareIktViewController.h; sourceTree = "<group>"; };
 		C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIShareIktViewController.m; sourceTree = "<group>"; };
 		C9419F131CDC3603000D59CF /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -196,6 +199,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C9221F071CE6D88400130977 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */,
+				C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */,
+				E133EE061C9855E8006319A8 /* IPIMapViewController.h */,
+				E133EE071C9855E8006319A8 /* IPIMapViewController.m */,
+				E1854DF71C99B4AF00BB60D6 /* IPIMasonryViewController.h */,
+				E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */,
+				E1854E261CA0409000BB60D6 /* IPIGraphicViewController.h */,
+				E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */,
+				C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */,
+				C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */,
+				C9B0AAFB1CA3E939002A6D3F /* IPIMessageViewController.h */,
+				C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */,
+				C9E17E811CA4EAC500ED1195 /* IPIImageHandleViewController.h */,
+				C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */,
+				C9846D191CA67EC600DEB7E8 /* IPITextKitViewController.h */,
+				C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */,
+				C9221F0C1CE6F8E900130977 /* IPICollectionViewController.h */,
+				C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C9221F081CE6D89C00130977 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C9BA64271CC8BD7D00922E3F /* IPIFileViewController.h */,
+				C9BA64281CC8BD7D00922E3F /* IPIFileViewController.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		C94446BC1C96573C009D9F35 = {
 			isa = PBXGroup;
 			children = (
@@ -276,24 +313,8 @@
 			children = (
 				C94447031C965C99009D9F35 /* IPIBasicViewController.h */,
 				C94447041C965C99009D9F35 /* IPIBasicViewController.m */,
-				E133EE061C9855E8006319A8 /* IPIMapViewController.h */,
-				E133EE071C9855E8006319A8 /* IPIMapViewController.m */,
-				E1854DF71C99B4AF00BB60D6 /* IPIMasonryViewController.h */,
-				E1854DF81C99B4AF00BB60D6 /* IPIMasonryViewController.m */,
-				E1854E261CA0409000BB60D6 /* IPIGraphicViewController.h */,
-				E1854E271CA0409000BB60D6 /* IPIGraphicViewController.m */,
-				C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */,
-				C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */,
-				C9B0AAFB1CA3E939002A6D3F /* IPIMessageViewController.h */,
-				C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */,
-				C9E17E811CA4EAC500ED1195 /* IPIImageHandleViewController.h */,
-				C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */,
-				C9846D191CA67EC600DEB7E8 /* IPITextKitViewController.h */,
-				C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */,
-				C9BA64271CC8BD7D00922E3F /* IPIFileViewController.h */,
-				C9BA64281CC8BD7D00922E3F /* IPIFileViewController.m */,
-				C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */,
-				C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */,
+				C9221F071CE6D88400130977 /* View */,
+				C9221F081CE6D89C00130977 /* Data */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -584,6 +605,7 @@
 				E1026FE81CDD07A800C56C0D /* DepartMent+CoreDataProperties.m in Sources */,
 				E1026FF91CDF963000C56C0D /* CoreDataSimple.m in Sources */,
 				C94446D01C96573C009D9F35 /* ViewController.m in Sources */,
+				C9221F0E1CE6F8E900130977 /* IPICollectionViewController.m in Sources */,
 				E1026FEF1CDD085600C56C0D /* UserModel.m in Sources */,
 				E1026FF21CDD086B00C56C0D /* DataBaseSimple.m in Sources */,
 				C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */,
