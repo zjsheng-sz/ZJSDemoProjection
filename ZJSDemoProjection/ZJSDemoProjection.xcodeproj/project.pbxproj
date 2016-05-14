@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9EA08DCF5B8F98438397D0DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA03DB6F8A93721E4416B4C /* libPods.a */; };
+		C9221F061CE6D04000130977 /* LGJFoldHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */; };
 		C9419F101CDC3517000D59CF /* IPIShareIktViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */; };
 		C94446CA1C96573C009D9F35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446C91C96573C009D9F35 /* main.m */; };
 		C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446CC1C96573C009D9F35 /* AppDelegate.m */; };
@@ -71,6 +72,8 @@
 		19976B5B3182F627223B24AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1BDCB2E228A793322564ABBA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BEA03DB6F8A93721E4416B4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9221F041CE6D04000130977 /* LGJFoldHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGJFoldHeaderView.h; sourceTree = "<group>"; };
+		C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGJFoldHeaderView.m; sourceTree = "<group>"; };
 		C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIShareIktViewController.h; sourceTree = "<group>"; };
 		C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIShareIktViewController.m; sourceTree = "<group>"; };
 		C9419F131CDC3603000D59CF /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				E133EE091C98609F006319A8 /* ConfigMacro.h */,
 				C94446CE1C96573C009D9F35 /* ViewController.h */,
 				C94446CF1C96573C009D9F35 /* ViewController.m */,
+				C9221F041CE6D04000130977 /* LGJFoldHeaderView.h */,
+				C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */,
 				C94446D11C96573C009D9F35 /* Main.storyboard */,
 				E1026FCD1CDD045300C56C0D /* category */,
 				E1026FD01CDD045300C56C0D /* NetWork */,
@@ -460,7 +465,7 @@
 				TargetAttributes = {
 					C94446C41C96573C009D9F35 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 5GYNH53HV7;
+						DevelopmentTeam = 55SSCB8A32;
 					};
 					C94446E01C96573C009D9F35 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -596,6 +601,7 @@
 				C9846D1B1CA67EC600DEB7E8 /* IPITextKitViewController.m in Sources */,
 				E1854DFC1C99BCC600BB60D6 /* IPIMasonryView.m in Sources */,
 				E133EE081C9855E8006319A8 /* IPIMapViewController.m in Sources */,
+				C9221F061CE6D04000130977 /* LGJFoldHeaderView.m in Sources */,
 				C94447051C965C99009D9F35 /* IPIBasicViewController.m in Sources */,
 				E1026FEB1CDD07A800C56C0D /* Staff+CoreDataProperties.m in Sources */,
 				C9E17E831CA4EAC500ED1195 /* IPIImageHandleViewController.m in Sources */,

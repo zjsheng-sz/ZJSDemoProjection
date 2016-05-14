@@ -38,10 +38,6 @@
         NSLog(@"manager start failed!");
     }
     
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [self doSomeThing];
-    });
-    
     return YES;
 }
 
@@ -123,7 +119,7 @@ int count;
         backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^{
     
         }];
-        
+    
         //结束旧的后台任务
         [application endBackgroundTask:backgroundTaskIdentifier];
         oldBackgroundTaskIdentifier = backgroundTaskIdentifier;
@@ -253,15 +249,5 @@ int count;
 
 #pragma mark 
 
-- (void)doSomeThing{
-
-    long i = 0;
-    
-        while (i < 100000) {
-            i ++;
-            NSLog(@"是否后台运行呢 ？ i = %ld",i);
-            
-        }
-}
 
 @end
