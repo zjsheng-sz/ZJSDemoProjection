@@ -7,10 +7,14 @@
 //
 
 #import "IPICollectionViewController.h"
+#import "fileTransferCollectionViewCell.h"
 
 @interface IPICollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic)UICollectionView * IPIcollectionView;/**< collectionView */
+@property (nonatomic, strong)UICollectionView * IPIcollectionView;/**< collectionView */
+@property (nonatomic, strong)NSArray *photoUrlStrArr;/** < 相册图片数组 */
+@property (nonatomic, strong)NSMutableArray *indexPath_photos;/** < 相册图片数组 */
+
 @end
 
 @implementation IPICollectionViewController
@@ -28,8 +32,6 @@
 -(void)creatCollectionView
 {
 //    selectedIdx = [[NSMutableDictionary alloc] init];
-    
-    CGFloat IPHONE_WIDTH = [UIScreen mainScreen].bounds.size.width;
     
     UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//滚动方向
@@ -55,9 +57,7 @@
     
 }
 
-/*
 #pragma mark ================UICollectionView代理===================
-
 
 //默认section个数为1
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -142,7 +142,6 @@
     [cell viewWithTag:selectedTag].alpha = selected ? cellNormal : cellHidden;
 }
 
-
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -152,8 +151,6 @@
 {
     return YES;
 }
-*/
-
 
 /*
 #pragma mark - Navigation

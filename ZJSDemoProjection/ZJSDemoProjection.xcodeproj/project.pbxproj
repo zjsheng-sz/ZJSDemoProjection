@@ -10,6 +10,10 @@
 		9EA08DCF5B8F98438397D0DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA03DB6F8A93721E4416B4C /* libPods.a */; };
 		C9221F061CE6D04000130977 /* LGJFoldHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */; };
 		C9221F0E1CE6F8E900130977 /* IPICollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */; };
+		C9221F121CE72B5D00130977 /* fileTransferBoxFileInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F111CE72B5D00130977 /* fileTransferBoxFileInfoModel.m */; };
+		C9221F151CE72B7200130977 /* fileTransferCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F141CE72B7200130977 /* fileTransferCollectionViewCell.m */; };
+		C9221F181CE72B8500130977 /* fileTransferCustomSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F171CE72B8500130977 /* fileTransferCustomSelectedView.m */; };
+		C9221F1B1CE72C5900130977 /* fileTransferTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F1A1CE72C5900130977 /* fileTransferTableViewCellModel.m */; };
 		C9419F101CDC3517000D59CF /* IPIShareIktViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */; };
 		C94446CA1C96573C009D9F35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446C91C96573C009D9F35 /* main.m */; };
 		C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446CC1C96573C009D9F35 /* AppDelegate.m */; };
@@ -77,6 +81,14 @@
 		C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGJFoldHeaderView.m; sourceTree = "<group>"; };
 		C9221F0C1CE6F8E900130977 /* IPICollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPICollectionViewController.h; sourceTree = "<group>"; };
 		C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPICollectionViewController.m; sourceTree = "<group>"; };
+		C9221F101CE72B5D00130977 /* fileTransferBoxFileInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileTransferBoxFileInfoModel.h; sourceTree = "<group>"; };
+		C9221F111CE72B5D00130977 /* fileTransferBoxFileInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileTransferBoxFileInfoModel.m; sourceTree = "<group>"; };
+		C9221F131CE72B7200130977 /* fileTransferCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileTransferCollectionViewCell.h; sourceTree = "<group>"; };
+		C9221F141CE72B7200130977 /* fileTransferCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileTransferCollectionViewCell.m; sourceTree = "<group>"; };
+		C9221F161CE72B8500130977 /* fileTransferCustomSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileTransferCustomSelectedView.h; sourceTree = "<group>"; };
+		C9221F171CE72B8500130977 /* fileTransferCustomSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileTransferCustomSelectedView.m; sourceTree = "<group>"; };
+		C9221F191CE72C5900130977 /* fileTransferTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileTransferTableViewCellModel.h; sourceTree = "<group>"; };
+		C9221F1A1CE72C5900130977 /* fileTransferTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileTransferTableViewCellModel.m; sourceTree = "<group>"; };
 		C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIShareIktViewController.h; sourceTree = "<group>"; };
 		C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIShareIktViewController.m; sourceTree = "<group>"; };
 		C9419F131CDC3603000D59CF /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -218,8 +230,7 @@
 				C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */,
 				C9846D191CA67EC600DEB7E8 /* IPITextKitViewController.h */,
 				C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */,
-				C9221F0C1CE6F8E900130977 /* IPICollectionViewController.h */,
-				C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */,
+				C9221F0F1CE72B0900130977 /* CollectionView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -231,6 +242,23 @@
 				C9BA64281CC8BD7D00922E3F /* IPIFileViewController.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		C9221F0F1CE72B0900130977 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C9221F101CE72B5D00130977 /* fileTransferBoxFileInfoModel.h */,
+				C9221F111CE72B5D00130977 /* fileTransferBoxFileInfoModel.m */,
+				C9221F131CE72B7200130977 /* fileTransferCollectionViewCell.h */,
+				C9221F141CE72B7200130977 /* fileTransferCollectionViewCell.m */,
+				C9221F161CE72B8500130977 /* fileTransferCustomSelectedView.h */,
+				C9221F171CE72B8500130977 /* fileTransferCustomSelectedView.m */,
+				C9221F191CE72C5900130977 /* fileTransferTableViewCellModel.h */,
+				C9221F1A1CE72C5900130977 /* fileTransferTableViewCellModel.m */,
+				C9221F0C1CE6F8E900130977 /* IPICollectionViewController.h */,
+				C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		C94446BC1C96573C009D9F35 = {
@@ -608,6 +636,7 @@
 				C9221F0E1CE6F8E900130977 /* IPICollectionViewController.m in Sources */,
 				E1026FEF1CDD085600C56C0D /* UserModel.m in Sources */,
 				E1026FF21CDD086B00C56C0D /* DataBaseSimple.m in Sources */,
+				C9221F181CE72B8500130977 /* fileTransferCustomSelectedView.m in Sources */,
 				C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */,
 				E1026FF51CDD08C700C56C0D /* FileInfoModel.m in Sources */,
 				E1026FD81CDD045300C56C0D /* IPINetWorking.m in Sources */,
@@ -617,6 +646,7 @@
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
 				E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
+				C9221F151CE72B7200130977 /* fileTransferCollectionViewCell.m in Sources */,
 				E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */,
 				E1026FE91CDD07A800C56C0D /* DepartMent.m in Sources */,
 				E1026FEC1CDD07A800C56C0D /* Staff.m in Sources */,
@@ -630,11 +660,13 @@
 				E1026FD71CDD045300C56C0D /* UIColor+HexColor.m in Sources */,
 				C94446D61C96573C009D9F35 /* ZJSDemoProjection.xcdatamodeld in Sources */,
 				E1026FDA1CDD045300C56C0D /* IPISender.m in Sources */,
+				C9221F121CE72B5D00130977 /* fileTransferBoxFileInfoModel.m in Sources */,
 				E1026FEA1CDD07A800C56C0D /* IPIBasicModel.m in Sources */,
 				E1026FD91CDD045300C56C0D /* IPIReciever.m in Sources */,
 				E1854E2E1CA196CE00BB60D6 /* IPILayer.m in Sources */,
 				C9419F101CDC3517000D59CF /* IPIShareIktViewController.m in Sources */,
 				C944470B1C965CED009D9F35 /* IPIBasicView.m in Sources */,
+				C9221F1B1CE72C5900130977 /* fileTransferTableViewCellModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
