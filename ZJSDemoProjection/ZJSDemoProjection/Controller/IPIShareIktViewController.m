@@ -8,20 +8,42 @@
 
 #import "IPIShareIktViewController.h"
 #import <Masonry.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import <QuickLook/QuickLook.h>
 
 @interface IPIShareIktViewController ()<UIDocumentInteractionControllerDelegate>
 @property(nonatomic,retain)UIDocumentInteractionController *docController;
-
+@property (nonatomic, strong) NSMutableArray *photoAssets;
+@property (nonatomic, strong) NSMutableArray *videoAssets;
 @end
 
 @implementation IPIShareIktViewController
+
+- (NSMutableArray *)photoAssets{
+    
+    if (!_photoAssets) {
+        _photoAssets = [[NSMutableArray alloc] init];
+    }
+    
+    return _photoAssets;
+}
+
+- (NSMutableArray *)videoAssets{
+    
+    if (!_videoAssets) {
+        _videoAssets = [[NSMutableArray alloc] init];
+    }
+    return _videoAssets;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self configView];
+    [self getImagesAndVideo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,10 +72,107 @@
     
 }
 
+
+-(void)getImagesAndVideo
+{
+    
+    //    dispatch_async(dispatch_get_main_queue(), ^{
+    ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror){
+        NSLog(@"相册访问失败 =%@", [myerror localizedDescription]);
+        if ([myerror.localizedDescription rangeOfString:@"Global denied access"].location!=NSNotFound) {
+            NSLog(@"无法访问相册.请在'设置->定位服务'设置为打开状态.");
+        }else{
+            NSLog(@"相册访问失败.");
+        }
+    };
+    
+    [self.videoAssets removeAllObjects];
+    [self.photoAssets removeAllObjects];
+    
+    ALAssetsGroupEnumerationResultsBlock groupEnumerAtion = ^(ALAsset *result, NSUInteger index, BOOL *stop){
+        if (result!=NULL) {
+            
+            if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
+                
+                //                    NSURL * photoUrl =result.defaultRepresentation.url;//图片的url
+                /*result.defaultRepresentation.fullScreenImage//图片的大图
+                 result.thumbnail                             //图片的缩略图小图
+                 //                    NSRange range1=[urlstr rangeOfString:@"id="];
+                 //                    NSString *resultName=[urlstr substringFromIndex:range1.location+3];
+                 //                    resultName=[resultName stringByReplacingOccurrencesOfString:@"&ext=" withString:@"."];//格式demo:123456.png
+                 */
+                //照片跟视频共用一个model
+//                fileTransferTableViewCellModel * videoModel = [[fileTransferTableViewCellModel alloc]init];
+//                videoModel.videoDate = [result valueForProperty:ALAssetPropertyDate];
+//                videoModel.videoFileName = result.defaultRepresentation.filename;
+//                videoModel.videoFileSize = result.defaultRepresentation.size;
+//                videoModel.videoUrl = result.defaultRepresentation.url;
+                NSLog(@"*** photo result.defaultRepresentation.url = %@",result.defaultRepresentation.url);
+//                [self.photoUrlStrArr addObject:videoModel];
+                [self.photoAssets addObject:result];
+                
+            }
+            if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypeVideo]) {
+                
+//                fileTransferTableViewCellModel * videoModel = [[fileTransferTableViewCellModel alloc]init];
+//                videoModel.videoDate = [result valueForProperty:ALAssetPropertyDate];
+//                videoModel.videoFileName = result.defaultRepresentation.filename;
+//                videoModel.videoFileSize = result.defaultRepresentation.size;
+//                videoModel.videoUrl = result.defaultRepresentation.url;
+//                
+//                [self.videoUrlStrArr addObject:videoModel];
+                
+                NSLog(@"*** video result.defaultRepresentation.url = %@",result.defaultRepresentation.url);
+                
+                [self.videoAssets addObject:result];
+            }
+        }
+    };
+    
+    
+    
+    ALAssetsLibraryGroupsEnumerationResultsBlock
+    libraryGroupsEnumeration = ^(ALAssetsGroup* group, BOOL* stop){
+        
+        if (group == nil)
+        {
+            
+        }
+        
+        if (group!=nil) {
+            NSString *g=[NSString stringWithFormat:@"%@",group];//获取相簿的组
+            NSLog(@"gg:%@",g);//gg:ALAssetsGroup - Name:Camera Roll, Type:Saved Photos, Assets count:71
+            
+            NSString *g1=[g substringFromIndex:16 ] ;
+            NSArray *arr=[[NSArray alloc] init];
+            arr=[g1 componentsSeparatedByString:@","];
+            NSString *g2=[[arr objectAtIndex:0] substringFromIndex:5];
+            if ([g2 isEqualToString:@"Camera Roll"]) {
+                g2=@"相机胶卷";
+            }
+            NSString *groupName=g2;//组的name
+            
+            [group enumerateAssetsUsingBlock:groupEnumerAtion];
+        }
+        
+    };
+    
+    ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
+    [library enumerateGroupsWithTypes:ALAssetsGroupAll
+                           usingBlock:libraryGroupsEnumeration
+                         failureBlock:failureblock];
+    //    });
+    
+}
+
+
+
 - (void)showMenuWithPath:(NSString *)path{
     
-    _docController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL  fileURLWithPath:path]];//为该对象初始化一个加载路径
-                  
+//    _docController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL  fileURLWithPath:@"assets-library://asset/asset.MOV?id=E5F7CC57-8D2E-4AE4-A9D6-36FF12F87561&ext=MOV"]];//为该对象初始化一个加载路径
+    _docController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL  URLWithString:@"assets-library://asset/asset.MOV?id=E5F7CC57-8D2E-4AE4-A9D6-36FF12F87561&ext=MOV"]];//为该对象初始化一个加载路径
+
+    
     _docController.delegate =self;//设置代理
 
     //直接显示预览

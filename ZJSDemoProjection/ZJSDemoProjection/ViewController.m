@@ -22,6 +22,7 @@
 #import "IPITextKitViewController.h"
 #import "IPIFileViewController.h"
 #import "IPIShareIktViewController.h"
+#import "IPIPhotoBrowserViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,FoldSectionHeaderViewDelegate>
 
@@ -69,7 +70,7 @@
     
     _sectionArray = @[@"view",@"基础知识",@"数据&数据处理",@"网络"];
     _functionsArray = @[@[@"百度地图",@"Masonry",@"图像绘制",@"WebView",
-                          @"Mess",@"图片压缩",@"Text Kit",@"其它应用打开",@"collectionView"],
+                          @"Mess",@"图片压缩",@"Text Kit",@"其它应用打开",@"collectionView",@"MWPhotoBrowser"],
                         @[@"C语言",@"GCD",@"加密"],
                         @[@"FMDB",@"CoreData",@"文件"],
                         @[@"AFNetWorking",@"socket封装"]];
@@ -176,7 +177,7 @@
                     break;
                 case 5:
                 {
-
+                    
                 }
                     break;
                 case 6:
@@ -189,6 +190,18 @@
                 {
                     IPIShareIktViewController *shareViewController = [[IPIShareIktViewController alloc] init];
                     [self.navigationController pushViewController:shareViewController animated:YES];
+                }
+                    break;
+                case 8:
+                {
+                    IPIShareIktViewController *shareViewController = [[IPIShareIktViewController alloc] init];
+                    [self.navigationController pushViewController:shareViewController animated:YES];
+                }
+                    break;
+                case 9://photoBrowser
+                {
+                    IPIPhotoBrowserViewController *photoBrowserController = [[IPIPhotoBrowserViewController alloc] init];
+                    [self.navigationController pushViewController:photoBrowserController animated:YES];
                 }
                     break;
                     

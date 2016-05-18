@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9EA08DCF5B8F98438397D0DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA03DB6F8A93721E4416B4C /* libPods.a */; };
+		60B58B1EDFB6C5A90E187B3A /* libPods-ZJSDemoProjection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C542FF3B89F78D481F106910 /* libPods-ZJSDemoProjection.a */; };
 		C9221F061CE6D04000130977 /* LGJFoldHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */; };
 		C9221F0E1CE6F8E900130977 /* IPICollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F0D1CE6F8E900130977 /* IPICollectionViewController.m */; };
 		C9221F121CE72B5D00130977 /* fileTransferBoxFileInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F111CE72B5D00130977 /* fileTransferBoxFileInfoModel.m */; };
 		C9221F151CE72B7200130977 /* fileTransferCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F141CE72B7200130977 /* fileTransferCollectionViewCell.m */; };
 		C9221F181CE72B8500130977 /* fileTransferCustomSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F171CE72B8500130977 /* fileTransferCustomSelectedView.m */; };
 		C9221F1B1CE72C5900130977 /* fileTransferTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F1A1CE72C5900130977 /* fileTransferTableViewCellModel.m */; };
+		C923537D1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C923537C1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m */; };
 		C9419F101CDC3517000D59CF /* IPIShareIktViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */; };
 		C94446CA1C96573C009D9F35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446C91C96573C009D9F35 /* main.m */; };
 		C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446CC1C96573C009D9F35 /* AppDelegate.m */; };
@@ -74,9 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19976B5B3182F627223B24AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		1BDCB2E228A793322564ABBA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		BEA03DB6F8A93721E4416B4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B739E607B327C1F001D6E13 /* Pods-ZJSDemoProjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJSDemoProjection.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJSDemoProjection/Pods-ZJSDemoProjection.release.xcconfig"; sourceTree = "<group>"; };
+		C542FF3B89F78D481F106910 /* libPods-ZJSDemoProjection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJSDemoProjection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9221F041CE6D04000130977 /* LGJFoldHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGJFoldHeaderView.h; sourceTree = "<group>"; };
 		C9221F051CE6D04000130977 /* LGJFoldHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGJFoldHeaderView.m; sourceTree = "<group>"; };
 		C9221F0C1CE6F8E900130977 /* IPICollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPICollectionViewController.h; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		C9221F171CE72B8500130977 /* fileTransferCustomSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileTransferCustomSelectedView.m; sourceTree = "<group>"; };
 		C9221F191CE72C5900130977 /* fileTransferTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileTransferTableViewCellModel.h; sourceTree = "<group>"; };
 		C9221F1A1CE72C5900130977 /* fileTransferTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileTransferTableViewCellModel.m; sourceTree = "<group>"; };
+		C923537B1CEBFE3900426D0E /* IPIPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		C923537C1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIShareIktViewController.h; sourceTree = "<group>"; };
 		C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIShareIktViewController.m; sourceTree = "<group>"; };
 		C9419F131CDC3603000D59CF /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		E1854E2A1CA0463000BB60D6 /* IPIGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIGraphicView.m; sourceTree = "<group>"; };
 		E1854E2C1CA196CE00BB60D6 /* IPILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPILayer.h; sourceTree = "<group>"; };
 		E1854E2D1CA196CE00BB60D6 /* IPILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPILayer.m; sourceTree = "<group>"; };
+		F30D45D9B8A58041B146D7FB /* Pods-ZJSDemoProjection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJSDemoProjection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJSDemoProjection/Pods-ZJSDemoProjection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EA08DCF5B8F98438397D0DF /* libPods.a in Frameworks */,
+				60B58B1EDFB6C5A90E187B3A /* libPods-ZJSDemoProjection.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,21 +197,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8AC978E5F0F452CFC80A1710 /* Frameworks */ = {
+		4448179C8A3694413095F27B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BEA03DB6F8A93721E4416B4C /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B24EA40594969FD8207D50EC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1BDCB2E228A793322564ABBA /* Pods.debug.xcconfig */,
-				19976B5B3182F627223B24AD /* Pods.release.xcconfig */,
+				F30D45D9B8A58041B146D7FB /* Pods-ZJSDemoProjection.debug.xcconfig */,
+				1B739E607B327C1F001D6E13 /* Pods-ZJSDemoProjection.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9DAD9F6EF252D1DEAB86C0C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C542FF3B89F78D481F106910 /* libPods-ZJSDemoProjection.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C9221F071CE6D88400130977 /* View */ = {
@@ -230,6 +233,8 @@
 				C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */,
 				C9846D191CA67EC600DEB7E8 /* IPITextKitViewController.h */,
 				C9846D1A1CA67EC600DEB7E8 /* IPITextKitViewController.m */,
+				C923537B1CEBFE3900426D0E /* IPIPhotoBrowserViewController.h */,
+				C923537C1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m */,
 				C9221F0F1CE72B0900130977 /* CollectionView */,
 			);
 			name = View;
@@ -268,8 +273,8 @@
 				C94446E41C96573C009D9F35 /* ZJSDemoProjectionTests */,
 				C94446EF1C96573C009D9F35 /* ZJSDemoProjectionUITests */,
 				C94446C61C96573C009D9F35 /* Products */,
-				B24EA40594969FD8207D50EC /* Pods */,
-				8AC978E5F0F452CFC80A1710 /* Frameworks */,
+				4448179C8A3694413095F27B /* Pods */,
+				9DAD9F6EF252D1DEAB86C0C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -451,12 +456,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C94446F51C96573C009D9F35 /* Build configuration list for PBXNativeTarget "ZJSDemoProjection" */;
 			buildPhases = (
-				6407D00DF51510599BE21B50 /* Check Pods Manifest.lock */,
+				D542D788B71626B5E777C330 /* 📦 Check Pods Manifest.lock */,
 				C94446C11C96573C009D9F35 /* Sources */,
 				C94446C21C96573C009D9F35 /* Frameworks */,
 				C94446C31C96573C009D9F35 /* Resources */,
-				C4683F6CD0CE67B39B0D0E04 /* Embed Pods Frameworks */,
-				788E748E1355787FF1DF8D2D /* Copy Pods Resources */,
+				F94A05B63BBF39E6102F83CA /* 📦 Embed Pods Frameworks */,
+				050CB1961A30456F4D086D58 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -514,7 +519,7 @@
 				TargetAttributes = {
 					C94446C41C96573C009D9F35 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 55SSCB8A32;
+						DevelopmentTeam = 5GYNH53HV7;
 					};
 					C94446E01C96573C009D9F35 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -578,14 +583,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6407D00DF51510599BE21B50 /* Check Pods Manifest.lock */ = {
+		050CB1961A30456F4D086D58 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJSDemoProjection/Pods-ZJSDemoProjection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D542D788B71626B5E777C330 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,34 +613,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		788E748E1355787FF1DF8D2D /* Copy Pods Resources */ = {
+		F94A05B63BBF39E6102F83CA /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4683F6CD0CE67B39B0D0E04 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJSDemoProjection/Pods-ZJSDemoProjection-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -637,6 +642,7 @@
 				E1026FEF1CDD085600C56C0D /* UserModel.m in Sources */,
 				E1026FF21CDD086B00C56C0D /* DataBaseSimple.m in Sources */,
 				C9221F181CE72B8500130977 /* fileTransferCustomSelectedView.m in Sources */,
+				C923537D1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m in Sources */,
 				C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */,
 				E1026FF51CDD08C700C56C0D /* FileInfoModel.m in Sources */,
 				E1026FD81CDD045300C56C0D /* IPINetWorking.m in Sources */,
@@ -805,13 +811,13 @@
 		};
 		C94446F61C96573C009D9F35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BDCB2E228A793322564ABBA /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F30D45D9B8A58041B146D7FB /* Pods-ZJSDemoProjection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ipi.ZJSDemoProjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,13 +827,13 @@
 		};
 		C94446F71C96573C009D9F35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19976B5B3182F627223B24AD /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1B739E607B327C1F001D6E13 /* Pods-ZJSDemoProjection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZJSDemoProjection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ipi.ZJSDemoProjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";

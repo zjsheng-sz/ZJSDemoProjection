@@ -58,7 +58,7 @@
 }
 
 #pragma mark ================UICollectionView代理===================
-
+/*
 //默认section个数为1
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -151,7 +151,7 @@
 {
     return YES;
 }
-
+*/
 /*
 #pragma mark - Navigation
 
