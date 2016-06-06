@@ -34,6 +34,7 @@
 		C9B0AAFA1CA3C686002A6D3F /* 头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B0AAF91CA3C686002A6D3F /* 头像@2x.png */; };
 		C9B0AAFD1CA3E939002A6D3F /* IPIMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */; };
 		C9BA64291CC8BD7D00922E3F /* IPIFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA64281CC8BD7D00922E3F /* IPIFileViewController.m */; };
+		C9BB9C521D05709A00A985E6 /* IPIMutilThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BB9C511D05709A00A985E6 /* IPIMutilThreadViewController.m */; };
 		C9E17E831CA4EAC500ED1195 /* IPIImageHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */; };
 		C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8C751CA0E8E70098EA89 /* IPIWebViewController.m */; };
 		E1026FD71CDD045300C56C0D /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1026FCF1CDD045300C56C0D /* UIColor+HexColor.m */; };
@@ -125,6 +126,8 @@
 		C9B0AAFC1CA3E939002A6D3F /* IPIMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMessageViewController.m; sourceTree = "<group>"; };
 		C9BA64271CC8BD7D00922E3F /* IPIFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIFileViewController.h; sourceTree = "<group>"; };
 		C9BA64281CC8BD7D00922E3F /* IPIFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIFileViewController.m; sourceTree = "<group>"; };
+		C9BB9C501D05709A00A985E6 /* IPIMutilThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIMutilThreadViewController.h; sourceTree = "<group>"; };
+		C9BB9C511D05709A00A985E6 /* IPIMutilThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIMutilThreadViewController.m; sourceTree = "<group>"; };
 		C9E17E811CA4EAC500ED1195 /* IPIImageHandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIImageHandleViewController.h; sourceTree = "<group>"; };
 		C9E17E821CA4EAC500ED1195 /* IPIImageHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIImageHandleViewController.m; sourceTree = "<group>"; };
 		C9FF8C741CA0E8E70098EA89 /* IPIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIWebViewController.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 			children = (
 				C9BA64271CC8BD7D00922E3F /* IPIFileViewController.h */,
 				C9BA64281CC8BD7D00922E3F /* IPIFileViewController.m */,
+				C9BB9C501D05709A00A985E6 /* IPIMutilThreadViewController.h */,
+				C9BB9C511D05709A00A985E6 /* IPIMutilThreadViewController.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 				C9221F0E1CE6F8E900130977 /* IPICollectionViewController.m in Sources */,
 				E1026FEF1CDD085600C56C0D /* UserModel.m in Sources */,
 				E1026FF21CDD086B00C56C0D /* DataBaseSimple.m in Sources */,
+				C9BB9C521D05709A00A985E6 /* IPIMutilThreadViewController.m in Sources */,
 				C9221F181CE72B8500130977 /* fileTransferCustomSelectedView.m in Sources */,
 				C923537D1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m in Sources */,
 				C9FF8C761CA0E8E70098EA89 /* IPIWebViewController.m in Sources */,

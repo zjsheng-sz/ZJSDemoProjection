@@ -23,6 +23,7 @@
 #import "IPIFileViewController.h"
 #import "IPIShareIktViewController.h"
 #import "IPIPhotoBrowserViewController.h"
+#import "IPIMutilThreadViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,FoldSectionHeaderViewDelegate>
 
@@ -71,7 +72,7 @@
     _sectionArray = @[@"view",@"基础知识",@"数据&数据处理",@"网络"];
     _functionsArray = @[@[@"百度地图",@"Masonry",@"图像绘制",@"WebView",
                           @"Mess",@"图片压缩",@"Text Kit",@"其它应用打开",@"collectionView",@"MWPhotoBrowser"],
-                        @[@"C语言",@"GCD",@"加密"],
+                        @[@"C语言",@"GCD",@"加密",@"多线程"],
                         @[@"FMDB",@"CoreData",@"文件"],
                         @[@"AFNetWorking",@"socket封装"]];
     
@@ -227,6 +228,12 @@
                 case 2:
                 {
 
+                }
+                    break;
+                case 3:
+                {
+                    IPIMutilThreadViewController *mutilThreadVC = [[IPIMutilThreadViewController alloc] init];
+                    [self.navigationController pushViewController:mutilThreadVC animated:YES];
                 }
                     break;
                     
