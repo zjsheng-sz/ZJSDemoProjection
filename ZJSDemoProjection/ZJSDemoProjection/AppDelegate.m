@@ -18,7 +18,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -129,9 +128,6 @@ int count;
 }
 
 
-
-
-
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -142,6 +138,7 @@ int count;
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.ipi.ZJSDemoProjection" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
 
 - (NSManagedObjectModel *)managedObjectModel {
     // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
@@ -223,8 +220,7 @@ int count;
     }
 }
 
-
-#pragma mark 
+#pragma mark
 
 - (UIImage *)imageWithHexColor:(NSString *)hexColor Rect:(CGSize)size{
     
