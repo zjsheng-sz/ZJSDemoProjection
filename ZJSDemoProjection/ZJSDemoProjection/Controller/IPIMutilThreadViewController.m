@@ -51,13 +51,12 @@
 
     [super viewWillAppear:YES];
     
-    //    [self caseOne];
-    //    [self caseTwo];
-    //    [self caseThree];
-//        [self caseThour];
-//        [self caseFive];
-    
-    [self loadImageWithMultiThread];
+//        [self caseOne];
+//        [self caseTwo];
+//        [self caseThree];
+        [self caseThour];
+    //    [self caseFive];
+    //    [self loadImageWithMultiThread];
     
 }
 
@@ -190,11 +189,11 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"2"); // 任务2
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"3"); // 任务3
+            NSLog(@"3"); //任务3
         });
-        NSLog(@"4"); // 任务4
+        NSLog(@"4"); //任务4
     });
-    NSLog(@"5"); // 任务5
+    NSLog(@"5"); //任务5
     
 }
 
