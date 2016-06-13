@@ -16,6 +16,7 @@
 		C9221F1B1CE72C5900130977 /* fileTransferTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9221F1A1CE72C5900130977 /* fileTransferTableViewCellModel.m */; };
 		C923537D1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C923537C1CEBFE3900426D0E /* IPIPhotoBrowserViewController.m */; };
 		C9419F101CDC3517000D59CF /* IPIShareIktViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */; };
+		C9427F811D0E48A8000929E1 /* NSString+IPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C9427F801D0E48A8000929E1 /* NSString+IPI.m */; };
 		C94446CA1C96573C009D9F35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446C91C96573C009D9F35 /* main.m */; };
 		C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446CC1C96573C009D9F35 /* AppDelegate.m */; };
 		C94446D01C96573C009D9F35 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94446CF1C96573C009D9F35 /* ViewController.m */; };
@@ -95,6 +96,8 @@
 		C9419F0E1CDC3517000D59CF /* IPIShareIktViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPIShareIktViewController.h; sourceTree = "<group>"; };
 		C9419F0F1CDC3517000D59CF /* IPIShareIktViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPIShareIktViewController.m; sourceTree = "<group>"; };
 		C9419F131CDC3603000D59CF /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
+		C9427F7F1D0E48A8000929E1 /* NSString+IPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPI.h"; sourceTree = "<group>"; };
+		C9427F801D0E48A8000929E1 /* NSString+IPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPI.m"; sourceTree = "<group>"; };
 		C94446C51C96573C009D9F35 /* ZJSDemoProjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJSDemoProjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94446C91C96573C009D9F35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C94446CB1C96573C009D9F35 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 			children = (
 				E1026FCE1CDD045300C56C0D /* UIColor+HexColor.h */,
 				E1026FCF1CDD045300C56C0D /* UIColor+HexColor.m */,
+				C9427F7F1D0E48A8000929E1 /* NSString+IPI.h */,
+				C9427F801D0E48A8000929E1 /* NSString+IPI.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -658,6 +663,7 @@
 				C94446CD1C96573C009D9F35 /* AppDelegate.m in Sources */,
 				E1854DF91C99B4AF00BB60D6 /* IPIMasonryViewController.m in Sources */,
 				C94446CA1C96573C009D9F35 /* main.m in Sources */,
+				C9427F811D0E48A8000929E1 /* NSString+IPI.m in Sources */,
 				C9221F151CE72B7200130977 /* fileTransferCollectionViewCell.m in Sources */,
 				E1854E281CA0409000BB60D6 /* IPIGraphicViewController.m in Sources */,
 				E1026FE91CDD07A800C56C0D /* DepartMent.m in Sources */,

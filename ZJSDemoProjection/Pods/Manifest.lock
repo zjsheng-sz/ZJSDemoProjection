@@ -32,6 +32,7 @@ PODS:
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
+  - Reachability (3.2)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - FMDB (~> 2.6)
   - Masonry (~> 0.6.3)
   - MWPhotoBrowser
+  - Reachability (~> 3.2)
   - SDWebImage (~> 3.7.5)
 
 SPEC CHECKSUMS:
@@ -54,8 +56,9 @@ SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
-PODFILE CHECKSUM: 02608411c4f85748e9ec15cd9b87c64a8f739051
+PODFILE CHECKSUM: e696ec1a8abec32c3eac49a16d3456e35bb86f95
 
 COCOAPODS: 1.0.0

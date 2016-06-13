@@ -10,5 +10,5 @@ pod 'FMDB', '~> 2.6'
 pod 'SDWebImage', '~> 3.7.5'
 pod 'CocoaAsyncSocket'
 pod "MWPhotoBrowser"
-
+pod 'Reachability', '~> 3.2'
 end
